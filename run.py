@@ -336,8 +336,6 @@ def get_price_preference_report(survey1_sheets):
     print('Prefer low end price: %s' % str(low_end_preference_format_percentage)+ '%')
 
 
-
-
 if __name__ == '__main__':
     survey = load_document().worksheet('survey1')
     # data = survey.get_all_values()
