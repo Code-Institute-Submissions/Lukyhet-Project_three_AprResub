@@ -166,26 +166,26 @@ def get_sunscreen_report(survey1_sheets):
     print('No daily sunscreen habit: %s' % str(no_habit_format_percentage)+ '%')
 
 
-def get_seasons_report(survey1_sheets):
-    seasons_values = get_seasons_adjust(survey1_sheets)
+def get_routine_report(survey1_sheets):
+    routine_values = get_routine_adjust(survey1_sheets)
     yes_adjust = []
     no_adjust = []
-    seasons_values_len = len(seasons_values)
-    for seasons_value in seasons_values[1:seasons_values_len]:
-        seasons_value = (seasons_value)
-        if seasons_value == "yes":
-            yes_adjust.append(seasons_value)
+    routine_values_len = len(routine_values)
+    for routine_value in routine_values[1:routine_values_len]:
+        routine_value = (routine_value)
+        if routine_value == "yes":
+            yes_adjust.append(routine_value)
         else:
-            no_adjust.append(seasons_value)
-    all_seasons_values_len = len(seasons_values) - 1
+            no_adjust.append(routine_value)
+    all_routine_values_len = len(routine_values) - 1
     yes_adjust_len = len(yes_adjust)
     no_adjust_len = len(no_adjust)
-    yes_adjust_percentage = (yes_adjust_len * 100) / all_seasons_values_len
-    no_adjust_percentage = (no_adjust_len * 100) / all_seasons_values_len
+    yes_adjust_percentage = (yes_adjust_len * 100) / all_routine_values_len
+    no_adjust_percentage = (no_adjust_len * 100) / all_routine_values_len
     yes_adjust_format_percentage = round(yes_adjust_percentage, 2)
     no_adjust_format_percentage = round(no_adjust_percentage, 2)
-    print('Adjust skincare with seasons: %s' % str(yes_adjust_format_percentage) + '%')
-    print('No adjust of skincare with seasons: %s' % str(no_adjust_format_percentage)+ '%')
+    print('Adjust skincare routine with seasons: %s' % str(yes_adjust_format_percentage) + '%')
+    print('Does not adjust skincare routine with seasons: %s' % str(no_adjust_format_percentage)+ '%')
 
 
 
@@ -200,5 +200,5 @@ if __name__ == '__main__':
     get_skin_type_report(survey)
     get_cleanse_report(survey)
     get_sunscreen_report(survey)
-    get_seasons_report(survey)
+    get_routine_report(survey)
     
