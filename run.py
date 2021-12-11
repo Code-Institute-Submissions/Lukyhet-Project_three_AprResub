@@ -235,17 +235,35 @@ def get_skin_concern_report(survey1_sheets):
     pigmentation_list_len = len(pigmentation_list)
     big_pores_list_len = len(big_pores_list)
     most_common = ''
-    if (aging_list_len > acne_list_len) and (aging_list_len > sensitive_skin_list_len) and (aging_list_len > pigmentation_list_len) and (aging_list_len > big_pores_list_len):
-        most_common = 'Aging'
-    if (acne_list_len > aging_list_len) and (acne_list_len > sensitive_skin_list_len) and (acne_list_len > pigmentation_list_len) and (acne_list_len > big_pores_list_len):
-        most_common = 'Acne'
-    if (sensitive_skin_list_len > aging_list_len) and (sensitive_skin_list_len > acne_list_len) and (sensitive_skin_list_len > pigmentation_list_len) and (sensitive_skin_list_len > big_pores_list_len):
-        most_common = 'Sensitive skin'
-    if (pigmentation_list_len > aging_list_len) and (pigmentation_list_len > acne_list_len) and (pigmentation_list_len > sensitive_skin_list_len) and (pigmentation_list_len > big_pores_list_len):
-        most_common = 'Pigmentation'
-    if (big_pores_list_len > aging_list_len) and (big_pores_list_len > acne_list_len) and (big_pores_list_len > sensitive_skin_list_len) and (big_pores_list_len > pigmentation_list_len):
-        most_common = 'Big pores'
-    print('Most common skin concern is %s' % most_common)
+    if (aging_list_len >= acne_list_len) and (aging_list_len >= sensitive_skin_list_len) and (aging_list_len >= pigmentation_list_len) and (aging_list_len >= big_pores_list_len):
+        if most_common == '':
+            most_common = 'Aging'
+        else:
+            most_common = most_common + ', Aging'
+    if (acne_list_len >= aging_list_len) and (acne_list_len >= sensitive_skin_list_len) and (acne_list_len >= pigmentation_list_len) and (acne_list_len >= big_pores_list_len):
+        if most_common == '':
+            most_common = 'Acne'
+        else:
+            most_common = most_common + ', Acne'
+    if (sensitive_skin_list_len >= aging_list_len) and (sensitive_skin_list_len >= acne_list_len) and (sensitive_skin_list_len >= pigmentation_list_len) and (sensitive_skin_list_len >= big_pores_list_len):
+        if most_common == '':
+            most_common = 'Sensitive skin'
+        else:
+            most_common = most_common + ', Sensitive skin'
+    if (pigmentation_list_len >= aging_list_len) and (pigmentation_list_len >= acne_list_len) and (pigmentation_list_len >= sensitive_skin_list_len) and (pigmentation_list_len >= big_pores_list_len):
+        if most_common == '':
+            most_common = 'Pigmentation'
+        else:
+            most_common = most_common + ', Pigmentation'
+    if (big_pores_list_len >= aging_list_len) and (big_pores_list_len >= acne_list_len) and (big_pores_list_len >= sensitive_skin_list_len) and (big_pores_list_len >= pigmentation_list_len):
+        if most_common == '':
+            most_common = 'Big pores'
+        else:
+            most_common = most_common + ', Big pores'
+    if (big_pores_list_len == aging_list_len) and (big_pores_list_len == acne_list_len) and (big_pores_list_len == sensitive_skin_list_len) and (big_pores_list_len == pigmentation_list_len):
+        print('All skin concerns are equally common')
+    else:
+        print('Most common skin concern is %s' % most_common)
 
 
 def get_favourite_product_report(survey1_sheets):
@@ -278,7 +296,10 @@ def get_favourite_product_report(survey1_sheets):
     acids_list_len = len(acids_list)
     most_common = ''
     if (serum_list_len >= moisturizer_list_len) and (serum_list_len >= sunscreen_list_len) and (serum_list_len >= cleanser_list_len) and (serum_list_len >= retinol_list_len) and (serum_list_len >= acids_list_len):
-        most_common = 'Serum'
+        if most_common == '':
+            most_common = 'Serum'
+        else:
+            most_common = most_common + ', Serum'
     if (acids_list_len >= serum_list_len) and (acids_list_len >= moisturizer_list_len) and (acids_list_len >= sunscreen_list_len) and (acids_list_len >= cleanser_list_len) and (acids_list_len >= retinol_list_len):
         if most_common == '':
             most_common = 'Acids'
