@@ -277,19 +277,37 @@ def get_favourite_product_report(survey1_sheets):
     retinol_list_len = len(retinol_list)
     acids_list_len = len(acids_list)
     most_common = ''
-    if (serum_list_len > moisturizer_list_len) and (serum_list_len > sunscreen_list_len) and (serum_list_len > cleanser_list_len) and (serum_list_len > retinol_list_len) and (serum_list_len > acids_list_len):
+    if (serum_list_len >= moisturizer_list_len) and (serum_list_len >= sunscreen_list_len) and (serum_list_len >= cleanser_list_len) and (serum_list_len >= retinol_list_len) and (serum_list_len >= acids_list_len):
         most_common = 'Serum'
-    if (moisturizer_list_len > serum_list_len) and (moisturizer_list_len > sunscreen_list_len) and (moisturizer_list_len > cleanser_list_len) and (moisturizer_list_len > retinol_list_len) and (moisturizer_list_len > acids_list_len):
-        most_common = 'Moisturizer'
-    if (sunscreen_list_len > serum_list_len) and (sunscreen_list_len > moisturizer_list_len) and (sunscreen_list_len > cleanser_list_len) and (sunscreen_list_len > retinol_list_len) and (sunscreen_list_len > acids_list_len):
-        most_common = 'Sunscreen'
-    if (cleanser_list_len > serum_list_len) and (cleanser_list_len > moisturizer_list_len) and (cleanser_list_len > sunscreen_list_len) and (cleanser_list_len > retinol_list_len) and (cleanser_list_len > acids_list_len):
-        most_common = 'Cleanser'
-    if (retinol_list_len > serum_list_len) and (retinol_list_len > moisturizer_list_len) and (retinol_list_len > sunscreen_list_len) and (retinol_list_len > cleanser_list_len) and (retinol_list_len > acids_list_len):
-        most_common = 'Retinol'
-    if (acids_list_len > serum_list_len) and (acids_list_len > moisturizer_list_len) and (acids_list_len > sunscreen_list_len) and (acids_list_len > cleanser_list_len) and (acids_list_len > retinol_list_len):
-        most_common = 'Acids'
-    print('Most common favourite product is %s' % most_common)
+    if (acids_list_len >= serum_list_len) and (acids_list_len >= moisturizer_list_len) and (acids_list_len >= sunscreen_list_len) and (acids_list_len >= cleanser_list_len) and (acids_list_len >= retinol_list_len):
+        if most_common == '':
+            most_common = 'Acids'
+        else:
+            most_common = most_common + ', Acids'
+    if (moisturizer_list_len >= serum_list_len) and (moisturizer_list_len >= sunscreen_list_len) and (moisturizer_list_len >= cleanser_list_len) and (moisturizer_list_len >= retinol_list_len) and (moisturizer_list_len >= acids_list_len):
+        if most_common == '':
+            most_common = 'Moisturizer'
+        else:
+            most_common = most_common + ', Moisturizer'
+    if (sunscreen_list_len >= serum_list_len) and (sunscreen_list_len >= moisturizer_list_len) and (sunscreen_list_len >= cleanser_list_len) and (sunscreen_list_len >= retinol_list_len) and (sunscreen_list_len >= acids_list_len):
+        if most_common == '':
+            most_common = 'Sunscreen'
+        else:
+            most_common = most_common + ', Sunscreen'
+    if (cleanser_list_len >= serum_list_len) and (cleanser_list_len >= moisturizer_list_len) and (cleanser_list_len >= sunscreen_list_len) and (cleanser_list_len >= retinol_list_len) and (cleanser_list_len >= acids_list_len):
+        if most_common == '':
+            most_common = 'Cleanser'
+        else:
+            most_common = most_common + ', Cleanser'
+    if (retinol_list_len >= serum_list_len) and (retinol_list_len >= moisturizer_list_len) and (retinol_list_len >= sunscreen_list_len) and (retinol_list_len >= cleanser_list_len) and (retinol_list_len >= acids_list_len):
+        if most_common == '':
+            most_common = 'Retinol'
+        else:
+            most_common = most_common + ', Retinol'
+    if (acids_list_len == serum_list_len) and (acids_list_len == moisturizer_list_len) and (acids_list_len == sunscreen_list_len) and (acids_list_len == cleanser_list_len) and (acids_list_len == retinol_list_len):
+        print('All products sold equally')
+    else:
+        print('Most selling product is %s' % most_common)
 
 
 def get_fragrance_preference_report(survey1_sheets):
