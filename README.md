@@ -59,6 +59,8 @@ A bug related to printing a result in case of a tie instead of a blanck space wa
     else:
         print('Most selling product is %s' % most_common)`
 
+Other kind of bugs that was about defining functions. It was necessary to double check on the correct definition of functions.
+
 
 ### Features to Implement in the future
 

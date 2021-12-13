@@ -18,6 +18,35 @@ def load_document():
     return sheet
 
 
+def yes_no(answer):
+    """
+    function to get a yes or no answer from the user.
+    defines the acceptable values for yes and no .
+    """
+    yes = ['yes']
+    no = ['no']
+
+    return yes_or_no(answer, yes, no)
+
+
+def welcome():
+    """
+    opening message.
+    prints a welcome and asks which parts of the app is ging to be used.
+    asks if the user wants to answer the survey or if the user wants to see the results of the survey.
+    returns answer values in a dict.
+    """
+    print("Welcome to Sikincare Survey! This app can help you to decide what kind of skincare product would be more successful in the market and the target public.\n")
+
+    first_question = input("would you like to answer the survey?")
+    second_question = input("would you like to see the current results of the survey?")
+    welcome_answers_dict = {"first question": first_question, "second question": second_question,}
+
+    print(welcome_answers_dict)
+    return welcome_answers_dict
+
+
+
 
 def get_age_range(survey1_sheets):
     """
@@ -447,14 +476,16 @@ if __name__ == '__main__':
     """
     Run all program functions
     """
-    get_age_report(survey)
-    get_skin_type_report(survey)
-    get_cleanse_report(survey)
-    get_sunscreen_report(survey)
-    get_routine_report(survey)
-    get_packaging_report(survey)
-    get_skin_concern_report(survey)
-    get_favourite_product_report(survey)
-    get_fragrance_preference_report(survey)
-    get_price_preference_report(survey)
+    response = welcome()
+    if response['second question'] == 'yes':
+        get_age_report(survey)
+        get_skin_type_report(survey)
+        get_cleanse_report(survey)
+        get_sunscreen_report(survey)
+        get_routine_report(survey)
+        get_packaging_report(survey)
+        get_skin_concern_report(survey)
+        get_favourite_product_report(survey)
+        get_fragrance_preference_report(survey)
+        get_price_preference_report(survey)
     
