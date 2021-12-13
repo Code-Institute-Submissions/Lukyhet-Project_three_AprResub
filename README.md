@@ -118,26 +118,19 @@ Several sources were consulted and their guides followed, for example:
 - Google Cloud Platform [Google Cloud](https://console.cloud.google.com/home/dashboard?project=skincaresurvey "Link to Google Cloud Platform")
 
 
-
 ## Acknowledgements
 
-- I want to thank and recognize the amazing job of my mentor Antonio Rodriguez who guided me and patiently taught me through the whole project process.
-- I also want to mention and thank John from student tutors at Code Institute for taking the time and explaining how to work through the warnings of the JS validator.
+- I want to thank and recognize once again the amazing job of my mentor Antonio Rodriguez who has guided me in a really clear and commited way during this project. 
+- I also want to mention and thank the student tutors service at Code Institute.
 
 
-[Back to top](#Movie-Trivia!)
+[Back to top](#Skincare Survey)
 
 ***
 
-!(https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome Lukyhet,
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
-
-## Reminders
-
-* Your code must be placed in the `run.py` file
+T
 * Your dependencies must be placed in the `requirements.txt` file
 * Do not edit any of the other files or your code may not deploy properly
 

@@ -18,57 +18,131 @@ def load_document():
     return sheet
 
 
+
+def yes_no(answer):
+    """
+    function to get a yes or no answer from the user.
+    defines the acceptable values for yes and no .
+    """
+    yes = ['yes']
+    no = ['no']
+
+    return yes_or_no(answer, yes, no)
+
+
+
+def welcome():
+    """
+    opening message.
+    prints a welcome and asks which parts of the app is ging to be used.
+    asks if the user wants to answer the survey or if the user wants to see the results of the survey.
+    returns answer values in a dict.
+    """
+
+    print("Welcome to Sikincare Survey! This app can help you to decide what kind of skincare product would be more successful in the market and the target public.\n")
+
+    first_question = yes_no(
+        "would you like to answer the survey?")
+    second_question = yes_no("would you like to see the current results of the survey?")
+    
+
+    opening_answers_dict = {
+        "first question": first_question,
+        "second question": second_question,
+       
+    }
+    
+    return welcome_answers_dict
+
+
+
+
+
 def get_age_range(survey1_sheets):
+    """
+    gets data from the first question/first column
+    """
+
     values = survey1_sheets.col_values(1)
     return values
 
 
 def get_skin_type(survey1_sheets):
+    """
+    gets data from the second question/second column
+    """
     values = survey1_sheets.col_values(2)
     return values
 
 
 def get_cleanse_habit(survey1_sheets):
+    """
+    gets data from the third question/third column
+    """
     values = survey1_sheets.col_values(3)
     return values
 
 
 def get_sunscreen_habit(survey1_sheets):
+    """
+    gets data from the 4th question/4th column
+    """
     values = survey1_sheets.col_values(4)
     return values
 
 
 def get_routine_adjust(survey1_sheets):
+    """
+    gets data from the 5th question/5th column
+    """
     values = survey1_sheets.col_values(5)
     return values
 
 
 def get_packaging_preference(survey1_sheets):
+    """
+    gets data from the 6th question/6th column
+    """
     values = survey1_sheets.col_values(6)
     return values
 
 
 def get_skin_concern(survey1_sheets):
+    """
+    gets data from the 7th question/7th column
+    """
     values = survey1_sheets.col_values(7)
     return values
 
 
 def get_favourite_product(survey1_sheets):
+    """
+    gets data from the 8th question/8th column
+    """
     values = survey1_sheets.col_values(8)
     return values
 
 
 def get_fragrance_preference(survey1_sheets):
+    """
+    gets data from the 9th question/9th column
+    """
     values = survey1_sheets.col_values(9)
     return values
 
 
 def get_price_preference(survey1_sheets):
+    """
+    gets data from the 10th question/10th column
+    """
     values = survey1_sheets.col_values(10)
     return values
 
 
 def get_age_report(survey1_sheets):
+    """
+    gets results as percentages form the data collected in the age column
+    """
     age_values = get_age_range(survey1_sheets)
     initial_range = []
     last_range = []
@@ -91,6 +165,9 @@ def get_age_report(survey1_sheets):
 
 
 def get_skin_type_report(survey1_sheets):
+    """
+    gets results as most common from the data collected in the skin type column
+    """
     dry_list = []
     oily_list = []
     combo_list = []
@@ -123,6 +200,9 @@ def get_skin_type_report(survey1_sheets):
 
 
 def get_cleanse_report(survey1_sheets):
+    """
+    gets results as percentages from the data collected in the cleanse column
+    """
     cleanse_values = get_cleanse_habit(survey1_sheets)
     yes_habit = []
     no_habit = []
@@ -145,6 +225,9 @@ def get_cleanse_report(survey1_sheets):
     
 
 def get_sunscreen_report(survey1_sheets):
+    """
+    gets results as percentages from the data collected in the sunscreen column
+    """
     sunscreen_values = get_sunscreen_habit(survey1_sheets)
     yes_habit = []
     no_habit = []
@@ -167,6 +250,9 @@ def get_sunscreen_report(survey1_sheets):
 
 
 def get_routine_report(survey1_sheets):
+    """
+    gets results as percentages from the data collected in the adjust routine column
+    """
     routine_values = get_routine_adjust(survey1_sheets)
     yes_adjust = []
     no_adjust = []
@@ -189,6 +275,9 @@ def get_routine_report(survey1_sheets):
 
 
 def get_packaging_report(survey1_sheets):
+    """
+    gets results as percentages from the data collected in the packaging preference column
+    """
     packaging_values = get_packaging_preference(survey1_sheets)
     plastic_preference = []
     glass_preference = []
@@ -211,6 +300,9 @@ def get_packaging_report(survey1_sheets):
 
 
 def get_skin_concern_report(survey1_sheets):
+    """
+    gets results as percentages from the data collected in the skin concern column
+    """
     aging_list = []
     acne_list = []
     sensitive_skin_list = []
@@ -266,7 +358,9 @@ def get_skin_concern_report(survey1_sheets):
         print('Most common skin concern is %s' % most_common)
 
 
-def get_favourite_product_report(survey1_sheets):
+def get_favourite_product_report(survey1_sheets):"""
+    gets results as most common values from the data collected in the favourite product column
+    """
     serum_list = []
     moisturizer_list = []
     sunscreen_list = []
@@ -332,6 +426,9 @@ def get_favourite_product_report(survey1_sheets):
 
 
 def get_fragrance_preference_report(survey1_sheets):
+    """
+    gets results as percentages from the data collected in the fragrance preference column
+    """
     fragrance_values = get_fragrance_preference(survey1_sheets)
     fragrance_preference = []
     fragrance_free_preference = []
@@ -354,6 +451,9 @@ def get_fragrance_preference_report(survey1_sheets):
 
 
 def get_price_preference_report(survey1_sheets):
+    """
+    gets results as percentages from the data collected in the price preference column
+    """
     price_values = get_price_preference(survey1_sheets)
     high_end_preference = []
     low_end_preference = []
@@ -382,6 +482,9 @@ if __name__ == '__main__':
     # print(skin_types)
     # price_preference = get_price_preference(survey)
     # print(price_preference)
+    """
+    Run all program functions
+    """
     get_age_report(survey)
     get_skin_type_report(survey)
     get_cleanse_report(survey)
