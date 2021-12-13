@@ -41,7 +41,17 @@ def welcome():
     first_question = input("would you like to answer the survey?")
     if first_question =='yes':
         age = get_age_question()
-    second_question = input("would you like to see the current results of the survey?")
+        get_skin_type_question()
+        get_cleanse_question()
+        get_sunscreen_question()
+        get_routine_adjust_question()
+        get_packaging_question()
+        get_skin_concern_question()
+        get_favourite_product_question()
+        get_fragrance_question()
+        get_price_question()
+    else:
+        second_question = input("would you like to see the current results of the survey?")
     welcome_answers_dict = {"first question": first_question, "second question": second_question,}
 
     print(welcome_answers_dict)
@@ -561,11 +571,7 @@ def get_price_preference_report(survey1_sheets):
 
 if __name__ == '__main__':
     survey = load_document().worksheet('survey1')
-    # data = survey.get_all_values()
-    # skin_types = get_skin_type(survey)
-    # print(skin_types)
-    # price_preference = get_price_preference(survey)
-    # print(price_preference)
+   
     """
     Run all program functions
     """
