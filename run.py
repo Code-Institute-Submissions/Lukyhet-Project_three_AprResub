@@ -19,45 +19,6 @@ def load_document():
 
 
 
-def yes_no(answer):
-    """
-    function to get a yes or no answer from the user.
-    defines the acceptable values for yes and no .
-    """
-    yes = ['yes']
-    no = ['no']
-
-    return yes_or_no(answer, yes, no)
-
-
-
-def welcome():
-    """
-    opening message.
-    prints a welcome and asks which parts of the app is ging to be used.
-    asks if the user wants to answer the survey or if the user wants to see the results of the survey.
-    returns answer values in a dict.
-    """
-
-    print("Welcome to Sikincare Survey! This app can help you to decide what kind of skincare product would be more successful in the market and the target public.\n")
-
-    first_question = yes_no(
-        "would you like to answer the survey?")
-    second_question = yes_no("would you like to see the current results of the survey?")
-    
-
-    opening_answers_dict = {
-        "first question": first_question,
-        "second question": second_question,
-       
-    }
-    
-    return welcome_answers_dict
-
-
-
-
-
 def get_age_range(survey1_sheets):
     """
     gets data from the first question/first column
@@ -358,7 +319,8 @@ def get_skin_concern_report(survey1_sheets):
         print('Most common skin concern is %s' % most_common)
 
 
-def get_favourite_product_report(survey1_sheets):"""
+def get_favourite_product_report(survey1_sheets):
+    """
     gets results as most common values from the data collected in the favourite product column
     """
     serum_list = []
@@ -452,27 +414,27 @@ def get_fragrance_preference_report(survey1_sheets):
 
 def get_price_preference_report(survey1_sheets):
     """
-    gets results as percentages from the data collected in the price preference column
+    gets results as percentages from the data collected in the price column
     """
     price_values = get_price_preference(survey1_sheets)
-    high_end_preference = []
-    low_end_preference = []
+    high_end_price_preference = []
+    low_end_price_preference = []
     price_values_len = len(price_values)
     for price_value in price_values[1:price_values_len]:
         price_value = (price_value)
         if price_value == "high end":
-            price_preference.append(price_value)
+            high_end_price_preference.append(price_value)
         else:
-            low_end_preference.append(value_value)
+            low_end_price_preference.append(price_value)
     all_price_values_len = len(price_values) - 1
-    high_end_preference_len = len(high_end_preference)
-    low_end_preference_len = len(low_end_preference)
-    high_end_preference_percentage = (high_end_preference_len * 100) / all_price_values_len
-    low_end_preference_percentage = (low_end_preference_len * 100) / all_price_values_len
-    high_end_preference_format_percentage = round(high_end_preference_percentage, 2)
-    low_end_preference_format_percentage = round(low_end_preference_percentage, 2)
-    print('Prefer high end price: %s' % str(high_end_preference_format_percentage) + '%')
-    print('Prefer low end price: %s' % str(low_end_preference_format_percentage)+ '%')
+    high_end_price_preference_len = len(high_end_price_preference)
+    low_end_price_preference_len = len(low_end_price_preference)
+    high_end_price_preference_percentage = (high_end_price_preference_len * 100) / all_price_values_len
+    low_end_price_preference_percentage = (low_end_price_preference_len * 100) / all_price_values_len
+    high_end_price_preference_format_percentage = round(high_end_price_preference_percentage, 2)
+    low_end_price_preference_format_percentage = round(low_end_price_preference_percentage, 2)
+    print('Prefer high end price: %s' % str(high_end_price_preference_format_percentage) + '%')
+    print('Prefer low end price: %s' % str(low_end_price_preference_format_percentage)+ '%')
 
 
 if __name__ == '__main__':
@@ -494,4 +456,5 @@ if __name__ == '__main__':
     get_skin_concern_report(survey)
     get_favourite_product_report(survey)
     get_fragrance_preference_report(survey)
+    get_price_preference_report(survey)
     
