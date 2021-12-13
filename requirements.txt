@@ -59,7 +59,7 @@ pandocfilters==1.4.3
 parso==0.8.2
 pbr==5.6.0
 pep8==1.7.1
-cachetools==4.2.1
+cachetools
 google-auth==1.27.0
 google-auth-oauthlib==0.4.2
 gspread==3.7.0
