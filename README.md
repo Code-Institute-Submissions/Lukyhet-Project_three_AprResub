@@ -61,12 +61,16 @@ A bug related to printing a result in case of a tie instead of a blanck space wa
 
 Other kind of bugs that was about defining functions. It was necessary to double check on the correct definition of functions.
 
+The last bug that appeared was related to the deployment of the app in Heroku, there was an incompatibility between versions of the packagest installes at the requirements.txt file. The solution was to run the command:
+
+`pip3 freeze > requirements.txt`
+
 
 ### Features to Implement in the future
 
 - **Recommendations**
 
-     - We would like to include an option in the app that would process the results and come with recommended options for skincare products.
+- We would like to include an option in the app that would process the results and come with recommended options for skincare products.
      
 
 ## Main Languages Used

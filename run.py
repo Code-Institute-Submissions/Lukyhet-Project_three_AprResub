@@ -39,6 +39,8 @@ def welcome():
     print("Welcome to Sikincare Survey! This app can help you to decide what kind of skincare product would be more successful in the market and the target public.\n")
 
     first_question = input("would you like to answer the survey?")
+    if first_question =='yes':
+        age = get_age_question()
     second_question = input("would you like to see the current results of the survey?")
     welcome_answers_dict = {"first question": first_question, "second question": second_question,}
 
@@ -46,7 +48,98 @@ def welcome():
     return welcome_answers_dict
 
 
+#Functions to present the survey questions to the user
 
+def get_age_question():
+    """
+    presents the first question to the user.
+    """
+    age_string = input("what is your age?: ")
+    age = int(age_string)
+    print("age is: " + str(age))
+    return age
+
+
+def get_skin_type_question():
+    """
+    presents the second question to the user.
+    """
+    skin_type = input("what's your skin type? choose dry, oily, combo, sensitive: ")
+    print("skin type is: " + skin_type)
+    return skin_type
+
+
+def get_cleanse_question():
+    """
+    presents the third question to the user.
+    """
+    cleanse_habit = input("do you double cleanse every day? answer yes or no: ")
+    print("Double cleanse habit is: " + cleanse_habit)
+    return cleanse_habit
+
+
+def get_sunscreen_question():
+    """
+    presents the fourth question to the user.
+    """
+    sunscreen_habit = input("do you use sunscreen everyday? answer yes or no: ")
+    print("Sunscreen habit is: " + sunscreen_habit)
+    return sunscreen_habit
+
+
+def get_routine_adjust_question():
+    """
+    presents the 5th question to the user.
+    """
+    adjust_habit = input("do you adjust your skincare routine according to the seasons? answer yes or no: ")
+    print("Routine adjust habit is: " + adjust_habit)
+    return adjust_habit
+
+
+def get_packaging_question():
+    """
+    presents the 6th question to the user.
+    """
+    packaging = input("Do you prefer plastic or glass packaging in your skincare products? answer plastic or glass: ")
+    print("Packaging preference is: " + packaging)
+    return packaging
+
+def get_skin_concern_question():
+    """
+    presents the 7th question to the user.
+    """
+    skin_concern = input("What is your skin concern? choose aging, acne, sensitive skin, pigmentation or big pores: ")
+    print("Skin concern is: " + skin_concern)
+    return skin_concern
+
+def get_favourite_product_question():
+    """
+    presents the 8th question to the user.
+    """
+    favourite_product = input("What is your favourite skincare product? choose serum, moisturizer, sunscreen, cleanser, retinol or acids: ")
+    print("Favourite product is: " + favourite_product)
+    return favourite_product
+
+
+def get_fragrance_question():
+    """
+    presents the 9th question to the user.
+    """
+    fragrance = input("do you prefer fragrance or fragrance-free skincare products?: ")
+    print("Fragrance preference is: " + fragrance)
+    return fragrance
+
+
+def get_price_question():
+    """
+    presents the 10th question to the user.
+    """
+    price_preference = input("do you prefer to buy high end or low end skincare products?: ")
+    print("Price preference is: " + price_preference)
+    return price_preference
+
+
+#Functions to get the results from the data collected through the survey
 
 def get_age_range(survey1_sheets):
     """
@@ -477,6 +570,21 @@ if __name__ == '__main__':
     Run all program functions
     """
     response = welcome()
+    print("second", response['first question'])
+    if response['first question'] == 'yes':
+        print("yes")
+        get_age_question()
+        get_skin_type_question()
+        get_cleanse_question()
+        get_sunscreen_question()
+        get_routine_adjust_question()
+        get_packaging_question()
+        get_skin_concern_question()
+        get_favourite_product_question()
+        get_fragrance_question()
+        get_price_question()
+
+
     if response['second question'] == 'yes':
         get_age_report(survey)
         get_skin_type_report(survey)
