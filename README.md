@@ -3,7 +3,7 @@
 
 ![Skincare Survey]
 
-[View the live project here](https://lukyhet.github.io/Repository-Two/)
+[View the live project here](https://lukyhet.github.io/Project_three/)
 
 ## Introduction
 
@@ -61,7 +61,9 @@ A bug related to printing a result in case of a tie instead of a blanck space wa
 
 
 ### Features to Implement in the future
+
 - **Recommendations**
+
      - We would like to include an option in the app that would process the results and come with recommended options for skincare products.
      
 
