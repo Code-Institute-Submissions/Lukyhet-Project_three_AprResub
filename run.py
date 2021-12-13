@@ -50,12 +50,21 @@ def welcome():
         get_favourite_product_question()
         get_fragrance_question()
         get_price_question()
-    else:
-        second_question = input("would you like to see the current results of the survey?")
-    welcome_answers_dict = {"first question": first_question, "second question": second_question,}
 
-    print(welcome_answers_dict)
-    return welcome_answers_dict
+    second_question = input("would you like to see the current results of the survey?")
+    if second_question =='yes':
+        get_age_report(survey)
+        get_skin_type_report(survey)
+        get_cleanse_report(survey)
+        get_sunscreen_report(survey)
+        get_routine_report(survey)
+        get_packaging_report(survey)
+        get_skin_concern_report(survey)
+        get_favourite_product_report(survey)
+        get_fragrance_preference_report(survey)
+        get_price_preference_report(survey)
+
+    
 
 
 #Functions to present the survey questions to the user
@@ -148,6 +157,16 @@ def get_price_question():
     print("Price preference is: " + price_preference)
     return price_preference
 
+#function to update worksheet
+
+def update_worksheet(data, worksheet):
+    """
+    Update the relevant worksheet with the data provided/function from the CI love_sandwiches project
+    """
+    print(f"Updating {worksheet} worksheet...\n")
+    worksheet_to_update = SHEET.worksheet(worksheet)
+    worksheet_to_update.append_row(data)
+    print(f"{worksheet} worksheet updated successfully\n")
 
 #Functions to get the results from the data collected through the survey
 
@@ -576,30 +595,4 @@ if __name__ == '__main__':
     Run all program functions
     """
     response = welcome()
-    print("second", response['first question'])
-    if response['first question'] == 'yes':
-        print("yes")
-        get_age_question()
-        get_skin_type_question()
-        get_cleanse_question()
-        get_sunscreen_question()
-        get_routine_adjust_question()
-        get_packaging_question()
-        get_skin_concern_question()
-        get_favourite_product_question()
-        get_fragrance_question()
-        get_price_question()
-
-
-    if response['second question'] == 'yes':
-        get_age_report(survey)
-        get_skin_type_report(survey)
-        get_cleanse_report(survey)
-        get_sunscreen_report(survey)
-        get_routine_report(survey)
-        get_packaging_report(survey)
-        get_skin_concern_report(survey)
-        get_favourite_product_report(survey)
-        get_fragrance_preference_report(survey)
-        get_price_preference_report(survey)
     
