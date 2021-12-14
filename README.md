@@ -95,7 +95,7 @@ The last bug that appeared was related to the deployment of the app in Heroku, t
 ## Testing
 
 
-The PEP8 Validator, was used to validate all the code of this repository and every warning was corrected until the code came up clean in the validator mentioned.
+The PEP8 Validator, was used to validate all the code of this repository and most warnings were corrected with the exception of those last ones that reported line too long (114 > 79 characters) because of the lack of time for this project.
 
 -PEP8 Validator ![PY](http://pep8online.com/checkresult)
 
@@ -108,9 +108,6 @@ This project was deployed in Github [View the live project here](https://lukyhet
     
 ## Credits 
 
-### Content
-
-- 
 
 ### Code 
 
