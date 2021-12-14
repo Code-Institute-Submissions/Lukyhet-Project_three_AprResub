@@ -32,9 +32,7 @@ def yes_no(answer):
 def welcome():
     """
     opening message.
-    prints a welcome and asks which parts of the app is ging to be used.
-    asks if the user wants to answer the survey or if the user wants to see the results of the survey.
-    returns answer values in a dict.
+    prints a welcome message and asks if the user wants to answer the survey or if the user wants to see the results of the survey.
     """
     print("Welcome to Sikincare Survey! This app can help you to decide what kind of skincare product would be more successful in the market and the target public.\n")
 
