@@ -32,12 +32,18 @@ def yes_no(answer):
 def welcome():
     """
     opening message.
-    prints a welcome message and asks if the user wants to answer the survey or if the user wants to see the results of the survey.
+    prints a welcome message and asks
+    if the user wants to answer the survey
+    or if the user wants to see the results of the survey.
     """
-    print("Welcome to Sikincare Survey! This app can help you to decide what kind of skincare product would be more successful in the market and the target public.\n")
+    print(
+        "Welcome to Sikincare Survey! " +
+        "This app can help you to decide what kind of skincare product " +
+        "would be more successful in the market and the target public.\n"
+    )
 
     first_question = input("would you like to answer the survey?")
-    if first_question =='yes':
+    if first_question == 'yes':
         age = get_age_question()
         get_skin_type_question()
         get_cleanse_question()
@@ -49,8 +55,11 @@ def welcome():
         get_fragrance_question()
         get_price_question()
 
-    second_question = input("would you like to see the current results of the survey?")
-    if second_question =='yes':
+    second_question = input(
+        "would you like to see the current " +
+        "results of the survey?\n"
+    )
+    if second_question == 'yes':
         get_age_report(survey)
         get_skin_type_report(survey)
         get_cleanse_report(survey)
@@ -62,10 +71,9 @@ def welcome():
         get_fragrance_preference_report(survey)
         get_price_preference_report(survey)
 
-    
 
+# Functions to present the survey questions to the user
 
-#Functions to present the survey questions to the user
 
 def get_age_question():
     """
@@ -81,7 +89,9 @@ def get_skin_type_question():
     """
     presents the second question to the user.
     """
-    skin_type = input("what's your skin type? choose dry, oily, combo, sensitive: ")
+    skin_type = input(
+        "what's your skin type? choose dry, oily, combo, sensitive: "
+        )
     print("skin type is: " + skin_type)
     return skin_type
 
@@ -90,7 +100,9 @@ def get_cleanse_question():
     """
     presents the third question to the user.
     """
-    cleanse_habit = input("do you double cleanse every day? answer yes or no: ")
+    cleanse_habit = input(
+        "do you double cleanse every day? answer yes or no: "
+        )
     print("Double cleanse habit is: " + cleanse_habit)
     return cleanse_habit
 
@@ -99,7 +111,9 @@ def get_sunscreen_question():
     """
     presents the fourth question to the user.
     """
-    sunscreen_habit = input("do you use sunscreen everyday? answer yes or no: ")
+    sunscreen_habit = input(
+        "do you use sunscreen everyday? answer yes or no: "
+        )
     print("Sunscreen habit is: " + sunscreen_habit)
     return sunscreen_habit
 
@@ -108,7 +122,10 @@ def get_routine_adjust_question():
     """
     presents the 5th question to the user.
     """
-    adjust_habit = input("do you adjust your skincare routine according to the seasons? answer yes or no: ")
+    adjust_habit = input(
+        "do you adjust your skincare routine according to the " +
+        "seasons? answer yes or no: "
+        )
     print("Routine adjust habit is: " + adjust_habit)
     return adjust_habit
 
@@ -117,23 +134,34 @@ def get_packaging_question():
     """
     presents the 6th question to the user.
     """
-    packaging = input("Do you prefer plastic or glass packaging in your skincare products? answer plastic or glass: ")
+    packaging = input(
+        "Do you prefer plastic or glass packaging in your " +
+        "skincare products? answer plastic or glass: "
+        )
     print("Packaging preference is: " + packaging)
     return packaging
+
 
 def get_skin_concern_question():
     """
     presents the 7th question to the user.
     """
-    skin_concern = input("What is your skin concern? choose aging, acne, sensitive skin, pigmentation or big pores: ")
+    skin_concern = input(
+        "What is your skin concern? choose aging, acne, " +
+        "sensitive skin, pigmentation or big pores: "
+    )
     print("Skin concern is: " + skin_concern)
     return skin_concern
+
 
 def get_favourite_product_question():
     """
     presents the 8th question to the user.
     """
-    favourite_product = input("What is your favourite skincare product? choose serum, moisturizer, sunscreen, cleanser, retinol or acids: ")
+    favourite_product = input(
+        "What is your favourite skincare product? " +
+        "choose serum, moisturizer, sunscreen, cleanser, retinol or acids: "
+        )
     print("Favourite product is: " + favourite_product)
     return favourite_product
 
@@ -142,7 +170,10 @@ def get_fragrance_question():
     """
     presents the 9th question to the user.
     """
-    fragrance = input("do you prefer fragrance or fragrance-free skincare products?: ")
+    fragrance = input(
+        "do you prefer fragrance or fragrance-free " +
+        "skincare products?: "
+        )
     print("Fragrance preference is: " + fragrance)
     return fragrance
 
@@ -151,22 +182,28 @@ def get_price_question():
     """
     presents the 10th question to the user.
     """
-    price_preference = input("do you prefer to buy high end or low end skincare products?: ")
+    price_preference = input(
+        "do you prefer to buy high end or low end " +
+        "skincare products?: "
+        )
     print("Price preference is: " + price_preference)
     return price_preference
 
-#function to update worksheet
+# function to update worksheet
+
 
 def update_worksheet(data, worksheet):
     """
-    Update the relevant worksheet with the data provided/function from the CI love_sandwiches project
+    Update the relevant worksheet with the data provided/function from
+    the CI love_sandwiches project
     """
     print(f"Updating {worksheet} worksheet...\n")
     worksheet_to_update = SHEET.worksheet(worksheet)
     worksheet_to_update.append_row(data)
     print(f"{worksheet} worksheet updated successfully\n")
 
-#Functions to get the results from the data collected through the survey
+# Functions to get the results from the data collected through the survey
+
 
 def get_age_range(survey1_sheets):
     """
@@ -271,7 +308,7 @@ def get_age_report(survey1_sheets):
     initial_range_format_percentage = round(initial_range_percentage, 2)
     last_range_format_percentage = round(last_range_percentage, 2)
     print('Ages 15 - 40 answer: %s' % str(initial_range_format_percentage) + '%')
-    print('Ages 40+ answer: %s' % str(last_range_format_percentage)+ '%')
+    print('Ages 40+ answer: %s' % str(last_range_format_percentage) + '%')
 
 
 def get_skin_type_report(survey1_sheets):
@@ -331,12 +368,13 @@ def get_cleanse_report(survey1_sheets):
     yes_habit_format_percentage = round(yes_habit_percentage, 2)
     no_habit_format_percentage = round(no_habit_percentage, 2)
     print('Do double cleanse: %s' % str(yes_habit_format_percentage) + '%')
-    print('No double cleanse habit: %s' % str(no_habit_format_percentage)+ '%')
-    
+    print('No double cleanse habit: %s' % str(no_habit_format_percentage) + '%')
+
 
 def get_sunscreen_report(survey1_sheets):
     """
-    gets results as percentages from the data collected in the sunscreen column
+    gets results as percentages from the data
+    collected in the sunscreen column
     """
     sunscreen_values = get_sunscreen_habit(survey1_sheets)
     yes_habit = []
@@ -356,7 +394,7 @@ def get_sunscreen_report(survey1_sheets):
     yes_habit_format_percentage = round(yes_habit_percentage, 2)
     no_habit_format_percentage = round(no_habit_percentage, 2)
     print('Use sunscreen daily: %s' % str(yes_habit_format_percentage) + '%')
-    print('No daily sunscreen habit: %s' % str(no_habit_format_percentage)+ '%')
+    print('No daily sunscreen habit: %s' % str(no_habit_format_percentage) + '%')
 
 
 def get_routine_report(survey1_sheets):
@@ -381,7 +419,7 @@ def get_routine_report(survey1_sheets):
     yes_adjust_format_percentage = round(yes_adjust_percentage, 2)
     no_adjust_format_percentage = round(no_adjust_percentage, 2)
     print('Adjust skincare routine with seasons: %s' % str(yes_adjust_format_percentage) + '%')
-    print('Does not adjust skincare routine with seasons: %s' % str(no_adjust_format_percentage)+ '%')
+    print('Does not adjust skincare routine with seasons: %s' % str(no_adjust_format_percentage) + '%')
 
 
 def get_packaging_report(survey1_sheets):
@@ -406,7 +444,7 @@ def get_packaging_report(survey1_sheets):
     plastic_preference_format_percentage = round(plastic_preference_percentage, 2)
     glass_preference_format_percentage = round(glass_preference_percentage, 2)
     print('Prefer plastic packaging: %s' % str(plastic_preference_format_percentage) + '%')
-    print('Prefer glass packaging: %s' % str(glass_preference_format_percentage)+ '%')
+    print('Prefer glass packaging: %s' % str(glass_preference_format_percentage) + '%')
 
 
 def get_skin_concern_report(survey1_sheets):
@@ -558,7 +596,7 @@ def get_fragrance_preference_report(survey1_sheets):
     fragrance_preference_format_percentage = round(fragrance_preference_percentage, 2)
     fragrance_free_preference_format_percentage = round(fragrance_free_preference_percentage, 2)
     print('Prefer fragrance: %s' % str(fragrance_preference_format_percentage) + '%')
-    print('Prefer fragrance-free: %s' % str(fragrance_free_preference_format_percentage)+ '%')
+    print('Prefer fragrance-free: %s' % str(fragrance_free_preference_format_percentage) + '%')
 
 
 def get_price_preference_report(survey1_sheets):
@@ -583,14 +621,13 @@ def get_price_preference_report(survey1_sheets):
     high_end_price_preference_format_percentage = round(high_end_price_preference_percentage, 2)
     low_end_price_preference_format_percentage = round(low_end_price_preference_percentage, 2)
     print('Prefer high end price: %s' % str(high_end_price_preference_format_percentage) + '%')
-    print('Prefer low end price: %s' % str(low_end_price_preference_format_percentage)+ '%')
+    print('Prefer low end price: %s' % str(low_end_price_preference_format_percentage) + '%')
 
 
 if __name__ == '__main__':
     survey = load_document().worksheet('survey1')
-   
+
     """
     Run all program functions
     """
     response = welcome()
-    
