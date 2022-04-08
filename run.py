@@ -59,6 +59,7 @@ def welcome():
         "would you like to see the current " +
         "results of the survey?\n"
     )
+
     if second_question == 'yes':
         get_age_report(survey)
         get_skin_type_report(survey)
@@ -74,15 +75,26 @@ def welcome():
 
 # Functions to present the survey questions to the user
 
-
+#loop in the function based on stackoverflow and includehelp.com
 def get_age_question():
     """
     presents the first question to the user.
     """
-    age_string = input("what is your age?: ")
-    age = int(age_string)
-    print("age is: " + str(age))
-    return age
+    while True:
+        try:
+            age = int(input("Enter age: ")) 
+            if age>15 and age<100:
+                print("age is: " + str(age))
+                break;
+            else:
+                print("Age should be >15 and <100...")      
+        except ValueError:
+            print("Provide an integer value...")
+            continue
+            print("age is: " + str(age))
+
+
+
 
 
 def get_skin_type_question():
@@ -201,6 +213,8 @@ def update_worksheet(data, worksheet):
     worksheet_to_update = SHEET.worksheet(worksheet)
     worksheet_to_update.append_row(data)
     print(f"{worksheet} worksheet updated successfully\n")
+
+    
 
 # Functions to get the results from the data collected through the survey
 
