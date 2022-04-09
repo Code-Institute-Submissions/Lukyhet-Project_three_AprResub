@@ -18,6 +18,14 @@ def load_document():
     return sheet
 
 
+def validate_input(input_value, valid_value_list):
+    if (input_value.lower() in valid_value_list):
+        return True
+    return False
+
+
+
+
 def yes_no(answer):
     """
     function to get a yes or no answer from the user.
@@ -80,41 +88,47 @@ def get_age_question():
     """
     presents the first question to the user.
     """
-    while True:
+    input_valid = False
+    while input_valid is False:
         try:
-            age = int(input("Enter age: ")) 
-            if age>15 and age<100:
+            age = int(input("Enter age: (number from 15 to 100): "))
+            if age > 15 and age < 100:
                 print("age is: " + str(age))
-                break;
+                input_valid = True
             else:
-                print("Age should be >15 and <100...")      
+                print("Age should be >15 and <100...")
         except ValueError:
-            print("Provide an integer value...")
-            continue
-            print("age is: " + str(age))
-
-
-
+            print("Provide a number...")
 
 
 def get_skin_type_question():
     """
     presents the second question to the user.
     """
-    skin_type = input(
-        "what's your skin type? choose dry, oily, combo, sensitive: "
-        )
-    print("skin type is: " + skin_type)
-    return skin_type
+    input_valid = False
+    while input_valid is False:
+        skin_type = input(
+            "what's your skin type? choose dry, oily, combo, sensitive: "
+            )
+        input_valid = validate_input(skin_type, ["dry", "oily", "combo", "sensitive"])
+        if input_valid is False:
+            print('Invalid input, please try again')
+    print("skin type is: " + skin_type.lower())
+    return skin_type.lower()
 
 
 def get_cleanse_question():
     """
     presents the third question to the user.
     """
-    cleanse_habit = input(
-        "do you double cleanse every day? answer yes or no: "
-        )
+    input_valid = False
+    while input_valid is False:
+        cleanse_habit = input(
+            "do you double cleanse every day? answer yes or no: "
+            )
+        input_valid = validate_input(cleanse_habit, ["yes", "no"])
+        if input_valid is False:
+            print('Invalid input, please try again')
     print("Double cleanse habit is: " + cleanse_habit)
     return cleanse_habit
 
@@ -639,9 +653,10 @@ def get_price_preference_report(survey1_sheets):
 
 
 if __name__ == '__main__':
-    survey = load_document().worksheet('survey1')
+    # survey = load_document().worksheet('survey1')
 
     """
     Run all program functions
     """
-    response = welcome()
+    # response = welcome()
+    get_age_question()
