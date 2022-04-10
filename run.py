@@ -49,8 +49,10 @@ def welcome():
         "This app can help you to decide what kind of skincare product " +
         "would be more successful in the market and the target public.\n"
     )
+    do_survey()
 
-    first_question = input("would you like to answer the survey?")
+def do_survey():
+    first_question = input("would you like to answer the survey?").lower()
     if first_question == 'yes':
         age = get_age_question()
         get_skin_type_question()
@@ -62,23 +64,27 @@ def welcome():
         get_favourite_product_question()
         get_fragrance_question()
         get_price_question()
+    elif first_question == "no":
 
-    second_question = input(
-        "would you like to see the current " +
-        "results of the survey?\n"
-    )
+        second_question = input(
+            "would you like to see the current " +
+            "results of the survey?\n"
+        ).lower()
 
-    if second_question == 'yes':
-        get_age_report(survey)
-        get_skin_type_report(survey)
-        get_cleanse_report(survey)
-        get_sunscreen_report(survey)
-        get_routine_report(survey)
-        get_packaging_report(survey)
-        get_skin_concern_report(survey)
-        get_favourite_product_report(survey)
-        get_fragrance_preference_report(survey)
-        get_price_preference_report(survey)
+        if second_question == 'yes':
+            get_age_report(survey)
+            get_skin_type_report(survey)
+            get_cleanse_report(survey)
+            get_sunscreen_report(survey)
+            get_routine_report(survey)
+            get_packaging_report(survey)
+            get_skin_concern_report(survey)
+            get_favourite_product_report(survey)
+            get_fragrance_preference_report(survey)
+            get_price_preference_report(survey)
+    else:
+        print("Unknown answer, please answer yes or no")
+        do_survey()
 
 
 # Functions to present the survey questions to the user
