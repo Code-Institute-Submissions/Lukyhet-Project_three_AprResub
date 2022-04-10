@@ -26,16 +26,22 @@ def validate_input(input_value, valid_value_list):
 
 
 
-def yes_no(answer):
+def yes_no(question):
     """
     function to get a yes or no answer from the user.
     defines the acceptable values for yes and no .
     """
-    yes = ['yes']
-    no = ['no']
-
-    return yes_or_no(answer, yes, no)
-
+    input_valid = False
+    result = False
+    while input_valid is False:
+        answer = input(question).lower()
+        if answer == "yes":
+            input_valid = True
+            result = True
+        if answer == "no":
+            input_valid = True
+            result = False
+    return result
 
 def welcome():
     """
@@ -49,11 +55,27 @@ def welcome():
         "This app can help you to decide what kind of skincare product " +
         "would be more successful in the market and the target public.\n"
     )
-    do_survey()
+    first_question = yes_no("Would you like to take the survey?")
+    if first_question:
+        do_survey()
+    second_question = yes_no( "would you like to see the current " +
+            "results of the survey?\n")
+    if second_question:
+        show_result()
+        
+def show_result():
+    get_age_report(survey)
+    get_skin_type_report(survey)
+    get_cleanse_report(survey)
+    get_sunscreen_report(survey)
+    get_routine_report(survey)
+    get_packaging_report(survey)
+    get_skin_concern_report(survey)
+    get_favourite_product_report(survey)
+    get_fragrance_preference_report(survey)
+    get_price_preference_report(survey)
 
 def do_survey():
-    first_question = input("would you like to answer the survey?").lower()
-    if first_question == 'yes':
         age = get_age_question()
         get_skin_type_question()
         get_cleanse_question()
@@ -64,29 +86,7 @@ def do_survey():
         get_favourite_product_question()
         get_fragrance_question()
         get_price_question()
-    elif first_question == "no":
-
-        second_question = input(
-            "would you like to see the current " +
-            "results of the survey?\n"
-        ).lower()
-
-        if second_question == 'yes':
-            get_age_report(survey)
-            get_skin_type_report(survey)
-            get_cleanse_report(survey)
-            get_sunscreen_report(survey)
-            get_routine_report(survey)
-            get_packaging_report(survey)
-            get_skin_concern_report(survey)
-            get_favourite_product_report(survey)
-            get_fragrance_preference_report(survey)
-            get_price_preference_report(survey)
-    else:
-        print("Unknown answer, please answer yes or no")
-        do_survey()
-
-
+  
 # Functions to present the survey questions to the user
 
 #loop in the function based on stackoverflow and includehelp.com
