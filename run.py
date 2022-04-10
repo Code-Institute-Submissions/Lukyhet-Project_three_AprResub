@@ -130,90 +130,125 @@ def get_cleanse_question():
         if input_valid is False:
             print('Invalid input, please try again')
     print("Double cleanse habit is: " + cleanse_habit)
-    return cleanse_habit
+    return cleanse_habit.lower()
 
 
 def get_sunscreen_question():
     """
     presents the fourth question to the user.
     """
-    sunscreen_habit = input(
-        "do you use sunscreen everyday? answer yes or no: "
-        )
+    input_valid = False
+    while input_valid is False:
+        sunscreen_habit = input(
+            "do you use sunscreen everyday? answer yes or no: "
+            )
+        input_valid = validate_input(sunscreen_habit, ["yes", "no"])
+        if input_valid is False:
+            print('Invalid input, please try again')
     print("Sunscreen habit is: " + sunscreen_habit)
-    return sunscreen_habit
+    return sunscreen_habit.lower()
 
 
 def get_routine_adjust_question():
     """
     presents the 5th question to the user.
     """
-    adjust_habit = input(
-        "do you adjust your skincare routine according to the " +
-        "seasons? answer yes or no: "
-        )
+    input_valid = False
+    while input_valid is False:
+        adjust_habit = input(
+            "do you adjust your skincare routine according to the " +
+            "seasons? answer yes or no: "
+            )
+        input_valid = validate_input(adjust_habit, ["yes", "no"])
+        if input_valid is False:
+            print('Invalid input, please try again')
     print("Routine adjust habit is: " + adjust_habit)
-    return adjust_habit
+    return adjust_habit.lower()
 
 
 def get_packaging_question():
     """
     presents the 6th question to the user.
     """
-    packaging = input(
-        "Do you prefer plastic or glass packaging in your " +
-        "skincare products? answer plastic or glass: "
-        )
+    input_valid = False
+    while input_valid is False:
+        packaging = input(
+            "Do you prefer plastic or glass packaging in your " +
+            "skincare products? answer plastic or glass: "
+            )
+        input_valid = validate_input(packaging, ["plastic", "glass"])
+        if input_valid is False:
+            print('Invalid input, please try again')
     print("Packaging preference is: " + packaging)
-    return packaging
+    return packaging.lower()
 
 
 def get_skin_concern_question():
     """
     presents the 7th question to the user.
     """
-    skin_concern = input(
-        "What is your skin concern? choose aging, acne, " +
-        "sensitive skin, pigmentation or big pores: "
-    )
+    input_valid = False
+    while input_valid is False:
+        skin_concern = input(
+            "What is your skin concern? choose aging, acne, " +
+            "sensitive skin, pigmentation or big pores: "
+            )
+        input_valid = validate_input(skin_concern, ["aging", "acne", "sensitive skin", "pigmentation", "big pores"])
+        if input_valid is False:
+            print('Invalid input, please try again')
     print("Skin concern is: " + skin_concern)
-    return skin_concern
+    return skin_concern.lower()
 
 
 def get_favourite_product_question():
     """
     presents the 8th question to the user.
     """
-    favourite_product = input(
-        "What is your favourite skincare product? " +
-        "choose serum, moisturizer, sunscreen, cleanser, retinol or acids: "
-        )
+    input_valid = False
+    while input_valid is False:
+        favourite_product = input(
+            "What is your favourite skincare product? " +
+            "choose serum, moisturizer, sunscreen, cleanser, retinol or acids: "
+            )
+        input_valid = validate_input(favourite_product, ["serum", "moisturizer", "sunscreen", "cleanser", "retinol", "acids"])
+        if input_valid is False:
+            print('Invalid input, please try again')
     print("Favourite product is: " + favourite_product)
-    return favourite_product
+    return favourite_product.lower()
 
 
 def get_fragrance_question():
     """
     presents the 9th question to the user.
     """
-    fragrance = input(
-        "do you prefer fragrance or fragrance-free " +
-        "skincare products?: "
-        )
+    input_valid = False
+    while input_valid is False:
+        fragrance = input(
+            "do you prefer fragrance or fragrance-free " +
+            "skincare products?: "
+            )
+        input_valid = validate_input(fragrance, ["fragrance", "fragrance-free"])
+        if input_valid is False:
+            print('Invalid input, please try again')
     print("Fragrance preference is: " + fragrance)
-    return fragrance
+    return fragrance.lower()
 
 
 def get_price_question():
     """
     presents the 10th question to the user.
     """
-    price_preference = input(
-        "do you prefer to buy high end or low end " +
-        "skincare products?: "
-        )
+    input_valid = False
+    while input_valid is False:
+        price_preference = input(
+            "do you prefer to buy high end or low end " +
+            "skincare products?: "
+            )
+        input_valid = validate_input(price_preference, ["high end", "low end"])
+        if input_valid is False:
+            print('Invalid input, please try again')
     print("Price preference is: " + price_preference)
-    return price_preference
+    return price_preference.lower()
 
 # function to update worksheet
 
@@ -653,10 +688,10 @@ def get_price_preference_report(survey1_sheets):
 
 
 if __name__ == '__main__':
-    # survey = load_document().worksheet('survey1')
+    survey = load_document().worksheet('survey1')
 
     """
     Run all program functions
     """
-    # response = welcome()
-    get_age_question()
+    response = welcome()
+    
