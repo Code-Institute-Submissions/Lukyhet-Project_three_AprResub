@@ -16,7 +16,7 @@ Skincare Survey app is a tool created for comercial research purposes. It has te
 
 This app was made as the third milestone project to achieve the Diploma in Software Development at the Code Institute. 
 
-The purpose of this project is the application of a survey that gathers information and gives results obtained through 10 questions about skincare preferences and habits. The main goal is to build an app/back end site that responds to the users actions, allowing the user to analize the data and use it for their comercial or research goals.
+The purpose of this project is the automation of a survey that gathers information and gives results obtained from the 10 answers to the same number of questions about skincare preferences and habits. The main goal is to build a back end site using python that responds to the users actions, allowing the user to analize the data and use it for their comercial or research goals.
 
 
 ## UX
@@ -38,11 +38,11 @@ The user for this website is:
 
 This is a back end application made using python. 
 
-The app applies a surve that poses ten different questions about skincare habits and preferences, some of them offer answer options and others are simple yes or no questions. The client/user can use the app both for applying the survey meaning collecting the data, and producing the results. The app can both read the information from the base google sheets skincare_survey document and write on it, updating it form the app.
+The app applies a survey that poses 10 different questions about skincare habits and preferences, some of them offer answer options and others are simple yes or no questions. The client/user can use the app both for applying the survey meaning collecting the data, and producing the results. The app can both read the information from the base google sheets skincare_survey document and write on it, updating it form the app.
 
 The functions in the app contain validation code that accepts only the correct kind of input from the user.
 
-The app has some questions that offer several options of answers, in the case of a tie the app can report it in the results, showing for example the two or three most prefered skincare products.
+As the survey app asks some questions that offer several options of answers, in the case of a tie the app can report it in the results, showing for example the two or three most prefered skincare products.
 
 
 #### Wireframes
@@ -94,7 +94,7 @@ The last bug that appeared was related to the deployment of the app in Heroku, t
 - [Google Sheets](https://docs.google.com/ "Link to Google Sheets")
      - Google Sheets is being used to host and consolidate the information of the survey.
 - [Google Cloud](https://console.cloud.google.com/home/dashboard?project=skincaresurvey "Link to Google Cloud Platform")
-     - Google Sheets is being used to store the information of the survey.
+     - In google Cloud we have enabled the Google Sheets API (which writes and reads in Google Sheets) and Google Drive API (which access our data stored in google drive). 
 
 
 
