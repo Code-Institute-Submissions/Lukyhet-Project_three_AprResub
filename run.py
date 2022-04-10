@@ -76,20 +76,20 @@ def show_result():
     get_price_preference_report(survey)
 
 def do_survey():
-        age = get_age_question()
-        get_skin_type_question()
-        get_cleanse_question()
-        get_sunscreen_question()
-        get_routine_adjust_question()
-        get_packaging_question()
-        get_skin_concern_question()
-        get_favourite_product_question()
-        get_fragrance_question()
-        get_price_question()
+    age = get_age_question()
+    get_skin_type_question()
+    get_cleanse_question()
+    get_sunscreen_question()
+    get_routine_adjust_question()
+    get_packaging_question()
+    get_skin_concern_question()
+    get_favourite_product_question()
+    get_fragrance_question()
+    get_price_question()
   
 # Functions to present the survey questions to the user
 
-#loop in the function based on stackoverflow and includehelp.com
+#loop in the age function inspired by stackoverflow and includehelp.com
 def get_age_question():
     """
     presents the first question to the user.
