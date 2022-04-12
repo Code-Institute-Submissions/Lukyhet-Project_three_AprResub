@@ -9,6 +9,7 @@ SCOPE = [
     "https://www.googleapis.com/auth/drive"
 ]
 
+survey_values = []
 
 def load_document():
     creds = Credentials.from_service_account_file('creds.json')
@@ -88,6 +89,7 @@ def do_survey():
     get_favourite_product_question()
     get_fragrance_question()
     get_price_question()
+    update_worksheet(survey_values, "survey1")
 
 # Functions to present the survey questions to the user
 
@@ -103,6 +105,7 @@ def get_age_question():
             if age > 15 and age < 100:
                 print("age is: " + str(age))
                 input_valid = True
+                survey_values.append(age)
             else:
                 print("Age should be >15 and <100...")
         except ValueError:
@@ -123,6 +126,7 @@ def get_skin_type_question():
         if input_valid is False:
             print('Invalid input, please try again')
     print("skin type is: " + skin_type.lower())
+    survey_values.append(skin_type.lower())
     return skin_type.lower()
 
 
@@ -140,6 +144,7 @@ def get_cleanse_question():
         if input_valid is False:
             print('Invalid input, please try again')
     print("Double cleanse habit is: " + cleanse_habit)
+    survey_values.append(cleanse_habit.lower())
     return cleanse_habit.lower()
 
 
@@ -156,6 +161,7 @@ def get_sunscreen_question():
         if input_valid is False:
             print('Invalid input, please try again')
     print("Sunscreen habit is: " + sunscreen_habit)
+    survey_values.append(sunscreen_habit.lower())
     return sunscreen_habit.lower()
 
 
@@ -173,6 +179,7 @@ def get_routine_adjust_question():
         if input_valid is False:
             print('Invalid input, please try again')
     print("Routine adjust habit is: " + adjust_habit)
+    survey_values.append(adjust_habit.lower())
     return adjust_habit.lower()
 
 
@@ -190,6 +197,7 @@ def get_packaging_question():
         if input_valid is False:
             print('Invalid input, please try again')
     print("Packaging preference is: " + packaging)
+    survey_values.append(packaging.lower())
     return packaging.lower()
 
 
@@ -210,6 +218,7 @@ def get_skin_concern_question():
         if input_valid is False:
             print('Invalid input, please try again')
     print("Skin concern is: " + skin_concern)
+    survey_values.append(skin_concern.lower())
     return skin_concern.lower()
 
 
@@ -227,6 +236,7 @@ def get_favourite_product_question():
         if input_valid is False:
             print('Invalid input, please try again')
     print("Favourite product is: " + favourite_product)
+    survey_values.append(favourite_product.lower())
     return favourite_product.lower()
 
 
@@ -246,6 +256,7 @@ def get_fragrance_question():
         if input_valid is False:
             print('Invalid input, please try again')
     print("Fragrance preference is: " + fragrance)
+    survey_values.append(fragrance.lower())
     return fragrance.lower()
 
 
@@ -263,6 +274,7 @@ def get_price_question():
         if input_valid is False:
             print('Invalid input, please try again')
     print("Price preference is: " + price_preference)
+    survey_values.append(price_preference.lower())
     return price_preference.lower()
 
 # function to update worksheet
@@ -271,10 +283,12 @@ def get_price_question():
 def update_worksheet(data, worksheet):
     """
     Update the relevant worksheet with the data provided/function from
-    the CI love_sandwiches project
+    the CI skincare app project
+    
     """
+    sheet = load_document()
     print(f"Updating {worksheet} worksheet...\n")
-    worksheet_to_update = SHEET.worksheet(worksheet)
+    worksheet_to_update = sheet.worksheet(worksheet)
     worksheet_to_update.append_row(data)
     print(f"{worksheet} worksheet updated successfully\n")
 
