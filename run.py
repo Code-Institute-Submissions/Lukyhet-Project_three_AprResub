@@ -644,7 +644,8 @@ def get_skin_concern_report(survey1_sheets):
 
 def get_favourite_product_report(survey1_sheets):
     """
-    gets results as most common values from the data collected in the favourite product column
+    gets results as most common values from the data
+    collected from the favourite product column
     """
     serum_list = []
     moisturizer_list = []
@@ -674,45 +675,75 @@ def get_favourite_product_report(survey1_sheets):
     retinol_list_len = len(retinol_list)
     acids_list_len = len(acids_list)
     most_common = ''
-    if (serum_list_len >= moisturizer_list_len) and (serum_list_len >= sunscreen_list_len) and (serum_list_len >= cleanser_list_len) and (serum_list_len >= retinol_list_len) and (serum_list_len >= acids_list_len):
+    if (serum_list_len >= moisturizer_list_len) and (
+        serum_list_len >= sunscreen_list_len) and (
+            serum_list_len >= cleanser_list_len) and (
+                serum_list_len >= retinol_list_len) and (
+                    serum_list_len >= acids_list_len):
         if most_common == '':
             most_common = 'Serum'
         else:
             most_common = most_common + ', Serum'
-    if (acids_list_len >= serum_list_len) and (acids_list_len >= moisturizer_list_len) and (acids_list_len >= sunscreen_list_len) and (acids_list_len >= cleanser_list_len) and (acids_list_len >= retinol_list_len):
+    if (acids_list_len >= serum_list_len) and (
+        acids_list_len >= moisturizer_list_len) and (
+            acids_list_len >= sunscreen_list_len) and (
+                acids_list_len >= cleanser_list_len) and (
+                    acids_list_len >= retinol_list_len):
         if most_common == '':
             most_common = 'Acids'
         else:
             most_common = most_common + ', Acids'
-    if (moisturizer_list_len >= serum_list_len) and (moisturizer_list_len >= sunscreen_list_len) and (moisturizer_list_len >= cleanser_list_len) and (moisturizer_list_len >= retinol_list_len) and (moisturizer_list_len >= acids_list_len):
+    if (moisturizer_list_len >= serum_list_len) and (
+        moisturizer_list_len >= sunscreen_list_len) and (
+            moisturizer_list_len >= cleanser_list_len) and (
+                moisturizer_list_len >= retinol_list_len) and (
+                    moisturizer_list_len >= acids_list_len):
         if most_common == '':
             most_common = 'Moisturizer'
         else:
             most_common = most_common + ', Moisturizer'
-    if (sunscreen_list_len >= serum_list_len) and (sunscreen_list_len >= moisturizer_list_len) and (sunscreen_list_len >= cleanser_list_len) and (sunscreen_list_len >= retinol_list_len) and (sunscreen_list_len >= acids_list_len):
+    if (sunscreen_list_len >= serum_list_len) and (
+        sunscreen_list_len >= moisturizer_list_len) and (
+            sunscreen_list_len >= cleanser_list_len) and (
+                sunscreen_list_len >= retinol_list_len) and (
+                    sunscreen_list_len >= acids_list_len):
         if most_common == '':
             most_common = 'Sunscreen'
         else:
             most_common = most_common + ', Sunscreen'
-    if (cleanser_list_len >= serum_list_len) and (cleanser_list_len >= moisturizer_list_len) and (cleanser_list_len >= sunscreen_list_len) and (cleanser_list_len >= retinol_list_len) and (cleanser_list_len >= acids_list_len):
+    if (cleanser_list_len >= serum_list_len) and (
+        cleanser_list_len >= moisturizer_list_len) and (
+            cleanser_list_len >= sunscreen_list_len) and (
+                cleanser_list_len >= retinol_list_len) and (
+                    cleanser_list_len >= acids_list_len):
         if most_common == '':
             most_common = 'Cleanser'
         else:
             most_common = most_common + ', Cleanser'
-    if (retinol_list_len >= serum_list_len) and (retinol_list_len >= moisturizer_list_len) and (retinol_list_len >= sunscreen_list_len) and (retinol_list_len >= cleanser_list_len) and (retinol_list_len >= acids_list_len):
+    if (retinol_list_len >= serum_list_len) and (
+        retinol_list_len >= moisturizer_list_len) and (
+            retinol_list_len >= sunscreen_list_len) and (
+                retinol_list_len >= cleanser_list_len) and (
+                    retinol_list_len >= acids_list_len):
         if most_common == '':
             most_common = 'Retinol'
         else:
             most_common = most_common + ', Retinol'
-    if (acids_list_len == serum_list_len) and (acids_list_len == moisturizer_list_len) and (acids_list_len == sunscreen_list_len) and (acids_list_len == cleanser_list_len) and (acids_list_len == retinol_list_len):
+    if (acids_list_len == serum_list_len) and (
+        acids_list_len == moisturizer_list_len) and (
+            acids_list_len == sunscreen_list_len) and (
+                acids_list_len == cleanser_list_len) and (
+                    acids_list_len == retinol_list_len):
         print('All products sold equally')
     else:
         print('Most selling product is %s' % most_common)
 
 
+
 def get_fragrance_preference_report(survey1_sheets):
     """
-    gets results as percentages from the data collected in the fragrance preference column
+    gets results as percentages from the data
+    collected in the fragrance preference column
     """
     fragrance_values = get_fragrance_preference(survey1_sheets)
     fragrance_preference = []
@@ -727,12 +758,26 @@ def get_fragrance_preference_report(survey1_sheets):
     all_fragrance_values_len = len(fragrance_values) - 1
     fragrance_preference_len = len(fragrance_preference)
     fragrance_free_preference_len = len(fragrance_free_preference)
-    fragrance_preference_percentage = (fragrance_preference_len * 100) / all_fragrance_values_len
-    fragrance_free_preference_percentage = (fragrance_free_preference_len * 100) / all_fragrance_values_len
-    fragrance_preference_format_percentage = round(fragrance_preference_percentage, 2)
-    fragrance_free_preference_format_percentage = round(fragrance_free_preference_percentage, 2)
-    print('Prefer fragrance: %s' % str(fragrance_preference_format_percentage) + '%')
-    print('Prefer fragrance-free: %s' % str(fragrance_free_preference_format_percentage) + '%')
+    fragrance_preference_percentage = (
+        fragrance_preference_len * 100
+        ) / all_fragrance_values_len
+    fragrance_free_preference_percentage = (
+        fragrance_free_preference_len * 100
+        ) / all_fragrance_values_len
+    fragrance_preference_format_percentage = round(
+        fragrance_preference_percentage, 2
+        )
+    fragrance_free_preference_format_percentage = round(
+        fragrance_free_preference_percentage, 2
+        )
+    print(
+        'Prefer fragrance: %s' % str(
+            fragrance_preference_format_percentage) + '%'
+            )
+    print(
+        'Prefer fragrance-free: %s' % str(
+            fragrance_free_preference_format_percentage) + '%'
+            )
 
 
 def get_price_preference_report(survey1_sheets):
@@ -752,12 +797,27 @@ def get_price_preference_report(survey1_sheets):
     all_price_values_len = len(price_values) - 1
     high_end_price_preference_len = len(high_end_price_preference)
     low_end_price_preference_len = len(low_end_price_preference)
-    high_end_price_preference_percentage = (high_end_price_preference_len * 100) / all_price_values_len
-    low_end_price_preference_percentage = (low_end_price_preference_len * 100) / all_price_values_len
-    high_end_price_preference_format_percentage = round(high_end_price_preference_percentage, 2)
-    low_end_price_preference_format_percentage = round(low_end_price_preference_percentage, 2)
-    print('Prefer high end price: %s' % str(high_end_price_preference_format_percentage) + '%')
-    print('Prefer low end price: %s' % str(low_end_price_preference_format_percentage) + '%')
+    high_end_price_preference_percentage = (
+        high_end_price_preference_len * 100
+        ) / all_price_values_len
+    low_end_price_preference_percentage = (
+        low_end_price_preference_len * 100
+        ) / all_price_values_len
+    high_end_price_preference_format_percentage = round(
+        high_end_price_preference_percentage, 2
+        )
+    low_end_price_preference_format_percentage = round(
+        low_end_price_preference_percentage, 2
+        )
+    print(
+        'Prefer high end price: %s' % str(
+            high_end_price_preference_format_percentage) + '%'
+            )
+    print(
+        'Prefer low end price: %s' % str(
+            low_end_price_preference_format_percentage) + '%'
+            )
+
 
 
 if __name__ == '__main__':
@@ -767,4 +827,4 @@ if __name__ == '__main__':
     Run all program functions
     """
     response = welcome()
-    
+  
