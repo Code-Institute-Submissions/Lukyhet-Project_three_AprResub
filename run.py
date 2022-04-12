@@ -58,10 +58,11 @@ def welcome():
     first_question = yes_no("Would you like to take the survey?")
     if first_question:
         do_survey()
-    second_question = yes_no( "would you like to see the current " +
-            "results of the survey?\n")
+    second_question = yes_no("would you like to see the current" +
+                             "results of the survey?\n")
     if second_question:
         show_result()
+
         
 def show_result():
     get_age_report(survey)
@@ -75,6 +76,7 @@ def show_result():
     get_fragrance_preference_report(survey)
     get_price_preference_report(survey)
 
+
 def do_survey():
     age = get_age_question()
     get_skin_type_question()
@@ -86,7 +88,7 @@ def do_survey():
     get_favourite_product_question()
     get_fragrance_question()
     get_price_question()
-  
+
 # Functions to present the survey questions to the user
 
 #loop in the age function inspired by stackoverflow and includehelp.com
@@ -116,11 +118,13 @@ def get_skin_type_question():
         skin_type = input(
             "what's your skin type? choose dry, oily, combo, sensitive: "
             )
-        input_valid = validate_input(skin_type, ["dry", "oily", "combo", "sensitive"])
+        input_valid = validate_input(
+                        skin_type, ["dry", "oily", "combo", "sensitive"])
         if input_valid is False:
             print('Invalid input, please try again')
     print("skin type is: " + skin_type.lower())
     return skin_type.lower()
+
 
 
 def get_cleanse_question():
@@ -199,7 +203,10 @@ def get_skin_concern_question():
             "What is your skin concern? choose aging, acne, " +
             "sensitive skin, pigmentation or big pores: "
             )
-        input_valid = validate_input(skin_concern, ["aging", "acne", "sensitive skin", "pigmentation", "big pores"])
+        input_valid = validate_input(skin_concern, [
+            "aging", "acne", "sensitive skin",
+            "pigmentation", "big pores"
+            ])
         if input_valid is False:
             print('Invalid input, please try again')
     print("Skin concern is: " + skin_concern)
@@ -233,7 +240,9 @@ def get_fragrance_question():
             "do you prefer fragrance or fragrance-free " +
             "skincare products?: "
             )
-        input_valid = validate_input(fragrance, ["fragrance", "fragrance-free"])
+        input_valid = validate_input(fragrance, [
+            "fragrance", "fragrance-free"
+            ])
         if input_valid is False:
             print('Invalid input, please try again')
     print("Fragrance preference is: " + fragrance)
@@ -376,7 +385,10 @@ def get_age_report(survey1_sheets):
     last_range_percentage = (last_range_len * 100) / all_age_values_len
     initial_range_format_percentage = round(initial_range_percentage, 2)
     last_range_format_percentage = round(last_range_percentage, 2)
-    print('Ages 15 - 40 answer: %s' % str(initial_range_format_percentage) + '%')
+    print(
+        'Ages 15 - 40 answer: %s' %
+        str(initial_range_format_percentage) + '%'
+        )
     print('Ages 40+ answer: %s' % str(last_range_format_percentage) + '%')
 
 
@@ -404,13 +416,25 @@ def get_skin_type_report(survey1_sheets):
     oily_list_len = len(oily_list)
     sensitive_list_len = len(sensitive_list)
     most_common = ''
-    if (dry_list_len > combo_list_len) and (dry_list_len > oily_list_len) and (dry_list_len > sensitive_list_len):
+    if (dry_list_len > combo_list_len) and (
+        dry_list_len > oily_list_len) and (
+            dry_list_len > sensitive_list_len
+            ):
         most_common = 'Dry'
-    if (combo_list_len > dry_list_len) and (combo_list_len > oily_list_len) and (combo_list_len > sensitive_list_len):
+    if (combo_list_len > dry_list_len) and (
+        combo_list_len > oily_list_len) and (
+            combo_list_len > sensitive_list_len
+            ):
         most_common = 'Combo'
-    if (oily_list_len > dry_list_len) and (oily_list_len > combo_list_len) and (oily_list_len > sensitive_list_len):
+    if (oily_list_len > dry_list_len) and (
+        oily_list_len > combo_list_len) and (
+            oily_list_len > sensitive_list_len
+            ):
         most_common = 'Oily'
-    if (sensitive_list_len > dry_list_len) and (sensitive_list_len > combo_list_len) and (sensitive_list_len > oily_list_len):
+    if (sensitive_list_len > dry_list_len) and (
+        sensitive_list_len > combo_list_len) and (
+            sensitive_list_len > oily_list_len
+            ):
         most_common = 'Sensitive'
     print('Most common skin type is %s' % most_common)
 
@@ -437,7 +461,9 @@ def get_cleanse_report(survey1_sheets):
     yes_habit_format_percentage = round(yes_habit_percentage, 2)
     no_habit_format_percentage = round(no_habit_percentage, 2)
     print('Do double cleanse: %s' % str(yes_habit_format_percentage) + '%')
-    print('No double cleanse habit: %s' % str(no_habit_format_percentage) + '%')
+    print(
+        'No double cleanse habit: %s' % str(no_habit_format_percentage) + '%'
+        )
 
 
 def get_sunscreen_report(survey1_sheets):
@@ -463,12 +489,15 @@ def get_sunscreen_report(survey1_sheets):
     yes_habit_format_percentage = round(yes_habit_percentage, 2)
     no_habit_format_percentage = round(no_habit_percentage, 2)
     print('Use sunscreen daily: %s' % str(yes_habit_format_percentage) + '%')
-    print('No daily sunscreen habit: %s' % str(no_habit_format_percentage) + '%')
+    print(
+        'No daily sunscreen habit: %s' % str(no_habit_format_percentage) + '%'
+        )
 
 
 def get_routine_report(survey1_sheets):
     """
-    gets results as percentages from the data collected in the adjust routine column
+    gets results as percentages from the data" +
+    "collected in the adjust routine column"
     """
     routine_values = get_routine_adjust(survey1_sheets)
     yes_adjust = []
@@ -487,13 +516,20 @@ def get_routine_report(survey1_sheets):
     no_adjust_percentage = (no_adjust_len * 100) / all_routine_values_len
     yes_adjust_format_percentage = round(yes_adjust_percentage, 2)
     no_adjust_format_percentage = round(no_adjust_percentage, 2)
-    print('Adjust skincare routine with seasons: %s' % str(yes_adjust_format_percentage) + '%')
-    print('Does not adjust skincare routine with seasons: %s' % str(no_adjust_format_percentage) + '%')
+    print(
+        'Adjust skincare routine with seasons: %s' % str(
+         yes_adjust_format_percentage) + '%'
+            )
+    print(
+        'Does not adjust skincare routine with seasons: %s' % str(
+         no_adjust_format_percentage) + '%'
+            )
 
 
 def get_packaging_report(survey1_sheets):
     """
-    gets results as percentages from the data collected in the packaging preference column
+    gets results as percentages from the data
+    collected in the packaging preference column
     """
     packaging_values = get_packaging_preference(survey1_sheets)
     plastic_preference = []
@@ -508,17 +544,30 @@ def get_packaging_report(survey1_sheets):
     all_packaging_values_len = len(packaging_values) - 1
     plastic_preference_len = len(plastic_preference)
     glass_preference_len = len(glass_preference)
-    plastic_preference_percentage = (plastic_preference_len * 100) / all_packaging_values_len
-    glass_preference_percentage = (glass_preference_len * 100) / all_packaging_values_len
-    plastic_preference_format_percentage = round(plastic_preference_percentage, 2)
+    plastic_preference_percentage = (
+        plastic_preference_len * 100
+        ) / all_packaging_values_len
+    glass_preference_percentage = (
+        glass_preference_len * 100
+        ) / all_packaging_values_len
+    plastic_preference_format_percentage = round(
+        plastic_preference_percentage, 2
+        )
     glass_preference_format_percentage = round(glass_preference_percentage, 2)
-    print('Prefer plastic packaging: %s' % str(plastic_preference_format_percentage) + '%')
-    print('Prefer glass packaging: %s' % str(glass_preference_format_percentage) + '%')
+    print(
+        'Prefer plastic packaging: %s' % str(
+            plastic_preference_format_percentage) + '%'
+            )
+    print(
+        'Prefer glass packaging: %s' % str(
+            glass_preference_format_percentage) + '%'
+            )
 
 
 def get_skin_concern_report(survey1_sheets):
     """
-    gets results as percentages from the data collected in the skin concern column
+    gets results as percentages from the
+    data collected in the skin concern column
     """
     aging_list = []
     acne_list = []
@@ -544,32 +593,50 @@ def get_skin_concern_report(survey1_sheets):
     pigmentation_list_len = len(pigmentation_list)
     big_pores_list_len = len(big_pores_list)
     most_common = ''
-    if (aging_list_len >= acne_list_len) and (aging_list_len >= sensitive_skin_list_len) and (aging_list_len >= pigmentation_list_len) and (aging_list_len >= big_pores_list_len):
+    if (aging_list_len >= acne_list_len) and (
+        aging_list_len >= sensitive_skin_list_len) and (
+            aging_list_len >= pigmentation_list_len) and (
+                aging_list_len >= big_pores_list_len):
         if most_common == '':
             most_common = 'Aging'
         else:
             most_common = most_common + ', Aging'
-    if (acne_list_len >= aging_list_len) and (acne_list_len >= sensitive_skin_list_len) and (acne_list_len >= pigmentation_list_len) and (acne_list_len >= big_pores_list_len):
+    if (acne_list_len >= aging_list_len) and (
+        acne_list_len >= sensitive_skin_list_len) and (
+            acne_list_len >= pigmentation_list_len) and (
+                acne_list_len >= big_pores_list_len):
         if most_common == '':
             most_common = 'Acne'
         else:
             most_common = most_common + ', Acne'
-    if (sensitive_skin_list_len >= aging_list_len) and (sensitive_skin_list_len >= acne_list_len) and (sensitive_skin_list_len >= pigmentation_list_len) and (sensitive_skin_list_len >= big_pores_list_len):
+    if (sensitive_skin_list_len >= aging_list_len) and (
+        sensitive_skin_list_len >= acne_list_len) and (
+            sensitive_skin_list_len >= pigmentation_list_len) and (
+                sensitive_skin_list_len >= big_pores_list_len):
         if most_common == '':
             most_common = 'Sensitive skin'
         else:
             most_common = most_common + ', Sensitive skin'
-    if (pigmentation_list_len >= aging_list_len) and (pigmentation_list_len >= acne_list_len) and (pigmentation_list_len >= sensitive_skin_list_len) and (pigmentation_list_len >= big_pores_list_len):
+    if (pigmentation_list_len >= aging_list_len) and (
+        pigmentation_list_len >= acne_list_len) and (
+            pigmentation_list_len >= sensitive_skin_list_len) and (
+                pigmentation_list_len >= big_pores_list_len):
         if most_common == '':
             most_common = 'Pigmentation'
         else:
             most_common = most_common + ', Pigmentation'
-    if (big_pores_list_len >= aging_list_len) and (big_pores_list_len >= acne_list_len) and (big_pores_list_len >= sensitive_skin_list_len) and (big_pores_list_len >= pigmentation_list_len):
+    if (big_pores_list_len >= aging_list_len) and (
+        big_pores_list_len >= acne_list_len) and (
+            big_pores_list_len >= sensitive_skin_list_len) and (
+                big_pores_list_len >= pigmentation_list_len):
         if most_common == '':
             most_common = 'Big pores'
         else:
             most_common = most_common + ', Big pores'
-    if (big_pores_list_len == aging_list_len) and (big_pores_list_len == acne_list_len) and (big_pores_list_len == sensitive_skin_list_len) and (big_pores_list_len == pigmentation_list_len):
+    if (big_pores_list_len == aging_list_len) and (
+        big_pores_list_len == acne_list_len) and (
+            big_pores_list_len == sensitive_skin_list_len) and (
+            big_pores_list_len == pigmentation_list_len):
         print('All skin concerns are equally common')
     else:
         print('Most common skin concern is %s' % most_common)
