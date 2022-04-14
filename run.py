@@ -44,6 +44,7 @@ def yes_no(question):
             result = False
     return result
 
+
 def welcome():
     """
     opening message.
@@ -52,11 +53,15 @@ def welcome():
     or if the user wants to see the results of the survey.
     """
     print(
-        "Welcome to Sikincare Survey! " +
-        "This app can help you to decide what kind of skincare product " +
-        "would be more successful in the market and the target public.\n"
+        "Welcome to Skincare Survey! " +
+        "If you want to launch a new skincare product " +
+        "or to study the market this app is going to help you. " +
+        "Skincare Survey is a market research tool aimed to " +
+        "collect and process data about skincare consumer preferences." +
+        "Potential consumers in a target group can complete the survey. \n"
     )
-    first_question = yes_no("Would you like to take the survey?")
+    first_question = yes_no("If you are a skincare consumer" +
+                            ", would you like to take the survey?\n")
     if first_question:
         do_survey()
     second_question = yes_no("would you like to see the current" +
@@ -64,7 +69,7 @@ def welcome():
     if second_question:
         show_result()
 
-        
+
 def show_result():
     get_age_report(survey)
     get_skin_type_report(survey)
@@ -91,9 +96,11 @@ def do_survey():
     get_price_question()
     update_worksheet(survey_values, "survey1")
 
+
 # Functions to present the survey questions to the user
 
-#loop in the age function inspired by stackoverflow and includehelp.com
+#loop in the age function based on ideas from stackoverflow
+
 def get_age_question():
     """
     presents the first question to the user.
@@ -128,7 +135,6 @@ def get_skin_type_question():
     print("skin type is: " + skin_type.lower())
     survey_values.append(skin_type.lower())
     return skin_type.lower()
-
 
 
 def get_cleanse_question():
@@ -277,8 +283,8 @@ def get_price_question():
     survey_values.append(price_preference.lower())
     return price_preference.lower()
 
-# function to update worksheet
 
+# function to update worksheet
 
 def update_worksheet(data, worksheet):
     """
@@ -292,7 +298,7 @@ def update_worksheet(data, worksheet):
     worksheet_to_update.append_row(data)
     print(f"{worksheet} worksheet updated successfully\n")
 
-    
+
 
 # Functions to get the results from the data collected through the survey
 
@@ -841,4 +847,3 @@ if __name__ == '__main__':
     Run all program functions
     """
     response = welcome()
-  

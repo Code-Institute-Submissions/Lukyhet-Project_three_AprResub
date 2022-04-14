@@ -83,7 +83,7 @@ Other bug was related to the deployment of the app in Heroku, there was an incom
 
 - [HTML5](https://en.wikipedia.org/wiki/HTML5 "Link to HTML Wikipedia") provided by the CI template for this project.
 - [JS](https://en.wikipedia.org/wiki/JavaScript "Link to JS Wikipedia") provided by the CI template for this project.
-- [PY](https://en.wikipedia.org/wiki/Python_(programming_language) "Link to PY Wikipedia")
+- [PY](https://en.wikipedia.org/wiki/Python_(programming_language) "Link to PY Wikipedia")main code source of this back-end project.
 
 
 ### Frameworks, Libraries & Programs Used
@@ -97,7 +97,12 @@ Other bug was related to the deployment of the app in Heroku, there was an incom
 - [Google Sheets](https://docs.google.com/ "Link to Google Sheets")
      - Google Sheets is being used to host and consolidate the information of the survey.
 - [Google Cloud](https://console.cloud.google.com/home/dashboard?project=skincaresurvey "Link to Google Cloud Platform")
-     - In google Cloud we have enabled the Google Sheets API (which writes and reads in Google Sheets) and Google Drive API (which access our data stored in google drive). 
+     - In google Cloud we have enabled the Google Sheets API (which writes and reads in Google Sheets) and Google Drive API (which access our data stored in google drive).
+-[google-auth](https://google-auth.readthedocs.io/en/master/ "Link to documentation about the libary") 
+Used in this project as google authentication library for google API for python.
+-[gspread](https://docs.gspread.org/en/latest/ "Link to documentation of the libary") 
+Used in this project as pythons API for google sheets.
+
 
 
 
