@@ -99,7 +99,7 @@ Other bug was related to the deployment of the app in Heroku, there was an incom
 - [Google Cloud](https://console.cloud.google.com/home/dashboard?project=skincaresurvey "Link to Google Cloud Platform")
      - In google Cloud we have enabled the Google Sheets API (which writes and reads in Google Sheets) and Google Drive API (which access our data stored in google drive).
 -[google-auth](https://google-auth.readthedocs.io/en/master/ "Link to documentation about the libary") 
-Used in this project as google authentication library for google API for python.
+Dependancy used in this project as google authentication library for google API for python.
 -[gspread](https://docs.gspread.org/en/latest/ "Link to documentation of the libary") 
 Used in this project as pythons API for google sheets.
 
@@ -144,39 +144,45 @@ To deploy this site from the GitHub repository, the following steps were taken:
      
 ### Deploying on Heroku
 
-And the app was deployed in Heroku - [View the heroku app here](https://skincare-survey.herokuapp.com/ "Link to Heroku app")
+The Skincare Survey app was deployed in Heroku - [View the heroku app here](https://skincare-survey.herokuapp.com/ "Link to Heroku app")
 
-### Deployment to heroku
 
 **In the terminal** 
 
--. add the list of requirements by writing in the terminal "pip3 freeze --local > requirements.txt"
--. Git add and git commit the changes made
+-. Add the requirements by writing this command in the terminal: "pip3 freeze --local > requirements.txt"
+-. Git add . and git commit your changes.
 
-**Log into heroku**
+**Go to your heroku account**
 
-. Log into [Heroku](https://dashboard.heroku.com/apps) or create a new account and log in
+. Log into [Heroku](https://dashboard.heroku.com/apps). If you don't have an account create one.
 
-. top right-hand corner click "New" and choose the option Create new app, if you are a new user, the "Create new app" button will appear in the middle of the screen
+. In the top right corner click "new" and select "Create new app".
 
-. Write app name - it has to be unique, it cannot be the same as this app
-. Choose Region - I am in Europe
-. Click "Create App"
+. Create a name for your app. It must be unique.
 
-**The page of your project opens.**
+. Choose Region - Ex: "Europe".
 
-8. Go to Resources Tab, Add-ons, search and add Heroku Postgres
+. Click "Create App".
 
-9. Choose "settings" from the menu on the top of the page
+**Your project page**
 
-10. Go to section "Config Vars" and click button "Reveal Config Vars". 
+. In the Resources Tab, Add-ons, look for "Heroku Postgres" and select it.
 
-11. Add the below variables to the list
+. Go to menu in the top of the page and choose "settings".
+
+. Go to "Config Vars" and click "Reveal Config Vars". 
+
+. Add the below variables to the list
 
     * Database URL will be added automaticaly
-    * Secret_key - is the djnago secret key can be generated [here](https://miniwebtool.com/django-secret-key-generator/). 
-    * Cloudinary URL can be obtained from [cloudinary](https://cloudinary.com/) follow the steps on the website to register. 
-    * Google API key can be obtained [here](https://cloud.google.com/gcp?authuser=1) you will have to register with google and create new app to get the API key. Follow the instructions on the website.
+    * In the field for Key we write CREDS, then paste the content of our creds.json file as value, ten click add. 
+    * Go to the right side of the page and Add the buildpack "Python". Save the changes.
+    * Go to add buildpack again in the right side of the page and add node.js. Save the changes. Check that python is on top and node.js underneath, if not, drag and change the order.
+
+. Go to the menu and click in the deployment method, select gitHub. Click "connect to GitHub"
+. Enter your GitHub repository name and click search and then click "connect".
+.Choose to manually or automatically deploy then we should see "The app was successfully deployed message".
+. Click in "view" to take a look at your app. If you need to restart in click "Run Program".
 
 **Go back to your code**
 
