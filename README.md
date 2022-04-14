@@ -5,40 +5,43 @@
 
 [View the live project here](https://lukyhet.github.io/Project_three/)
 
+
 ## Introduction
 
-Our app offers the possibility to apply a survey that gathers crucial information for companies interested in launching new skincare products. The app works by collecting possible customers preferences through a 10 questions survey. The survey asks about the potential customer skincare habits, age and skin type to compile it and give results that can show what is the most common skin type, the most favourite skincare product or the customers packaging preferences. This resulst have the potential to be used in market studies for companies intested in the data and it was made to facilitate their access to the skincare markets information directly taken from skincare consumers. The target audience is companies, entrepreneurs, students and researchers that are interested in having access to skincare consumers preferences.
+Our app offers the possibility to apply a survey that gathers important information for companies interested in launching new skincare products. The app works by collecting possible customers preferences through a 10 questions survey. The survey asks about the potential customer skincare habits, age and skin type to compile it and give results that can show what is the most common skin type, the most favourite skincare product or the customers packaging preferences. This resulst have the potential to be used in market studies for companies intested in the data and it was made to facilitate their access to the skincare markets information directly taken from skincare consumers. The target audience is companies, entrepreneurs, students and researchers that are interested in having access to data about skincare consumers preferences.
 
 
 <details>
 
-Skincare Survey app is a tool created for comercial research purposes. It has ten different questions about the skincare habits and preferences of a skincare consumer group.
+Skincare Survey app is a tool created for comercial research purposes. It is an automated survey that has ten different questions about the skincare habits and preferences of a skincare consumer group.
 
 This app was made as the third milestone project to achieve the Diploma in Software Development at the Code Institute. 
 
 The purpose of this project is the automation of a survey that gathers information and gives results obtained from the 10 answers to the same number of questions about skincare preferences and habits. The main goal is to build a back end site using python that responds to the users actions, allowing the user to analize the data and use it for their comercial or research goals.
+
+![Skincare Survey](assets/readme_files/SkincareSurvey2.png)
 
 
 ## UX
 ###  User Demographic
 The user for this website is: 
 
-- Companies, entrepreneurs, students and researchers that want collect skincare consumers market data to create and sell new skincare products to young and adult skincare consumers, or just for research purposes. The consumers are people who has a skincare concern and who are interested in purchasing new skincare products to tackle their skincare problems. 
+- Companies, entrepreneurs, students and researchers that want collect skincare consumers market data to create and sell new skincare products to young and adult skincare consumers, or just for research purposes. The skincare consumers are people who has a skincare concern and who are interested in purchasing new skincare products to tackle their skin problems. 
 
 
 #### User Goals
 
 - To apply a survey/research tool aimed to gather information from potential consumers/users to help define what skincare product would be best to create and sell according to the preferences of the potential consumers. 
-- Gather information research pouposes. 
-- Have an efficient and concise instrument (survey) to apply.
+- Gather information for research pouposes. 
+- Have an efficient and automated instrument (survey) to apply that also automates the process of updating the database.
 - Have clear results and data to work with.
 
 
 ## Features 
 
-This is a back end application made using python. 
+This is a back-end application made using python. 
 
-The app applies a survey that poses 10 different questions about skincare habits and preferences, some of them offer answer options and others are simple yes or no questions. The client/user can use the app both for applying the survey meaning collecting the data, and producing the results. The app can both read the information from the base google sheets skincare_survey document and write on it, updating it form the app.
+The app applies a survey that poses 10 different questions about skincare habits and preferences, some of them offer answer options and others are simple yes or no questions. The client/user can use the app both for applying the survey meaning collecting the data, and producing the results. The app can both read the information from the base (google sheets skincare_survey document) and write on it, updating it form the app.
 
 The functions in the app contain validation code that accepts only the correct kind of input from the user.
 
@@ -48,7 +51,7 @@ As the survey app asks some questions that offer several options of answers, in 
 #### Wireframes
   
 
-- This project is a back end app and it does not involve aesthetic design, the blueprints of the project or initial work was done by creating the questions and answer options that would collect the specific data to offer valuable results for clients interested in launching a successful new skincare product or for skincare consumers market researchers.
+- This project is a back-end app and it does not involve aesthetic design, the blueprints of the project or initial work was done by creating the questions and answer options that would collect the specific data to offer valuable results for clients interested in launching a successful new skincare product or for skincare consumers market researchers.
 
 
 ## Debugging
@@ -64,7 +67,7 @@ A bug related to printing a result in case of a tie instead of a blanck space wa
 
 Other kind of bugs that were detected had to do with validation of input in the functions. It was necessary adjust and correct.
 
-The last bug that appeared was related to the deployment of the app in Heroku, there was an incompatibility between versions of the packagest installed at the requirements.txt file. The solution was to run the command:
+Other bug was related to the deployment of the app in Heroku, there was an incompatibility between versions of the packagest installed at the requirements.txt file. The solution was to run the command:
 
 `pip3 freeze > requirements.txt`
 
@@ -73,7 +76,7 @@ The last bug that appeared was related to the deployment of the app in Heroku, t
 
 - **Recommendations**
 
-- We would like to include an option in the app that would add a third step after processing the data  and then come up with recommended options potentially successful skincare products.
+- We would like to include an option in the app that would add a third step after processing the data  and then come up with recommended options for potentially successful skincare products, but we are conscious that the process to come to those sugestions requires to collect more data and perhaps other market reading strategies.
      
 
 ## Main Languages Used
@@ -98,16 +101,22 @@ The last bug that appeared was related to the deployment of the app in Heroku, t
 
 
 
-
 </details>
 
 
 ## Testing
 
 
-The PEP8 Validator, was used to validate all the code of this repository and most warnings were corrected with the exception of those last ones that reported line too long (114 > 79 characters) because of the lack of time for this project.
+The PEP8 Validator was used to validate all the code of this repository and the errors detected were corrected.
+
 
 -PEP8 Validator ![PY](http://pep8online.com/checkresult)
+
+![Skincare Survey python coded validation](assets/readme_files/ValidationPy1.png)
+
+![Skincare Survey python coded validation](assets/readme_files/ValidationPy5.png)
+
+![Skincare Survey python coded validation](assets/readme_files/ValidationPy8.png)
 
 
 
@@ -124,6 +133,7 @@ This project was deployed in Github [View the live project here](https://lukyhet
 Several sources were consulted and their guides followed, for example:
 
 - [Stack Overflow](https://stackoverflow.com/ "Link to Stack Overflow page")
+-[Stack Overflow](https://stackoverflow.com/questions/53162/how-can-i-do-a-line-break-line-continuation-in-python/ "Link to Stack Overflow ansers about fixing long lines errors in Python")
 - [W3Schools](https://www.w3schools.com/ "Link to W3Schools page") 
 
 
@@ -132,11 +142,12 @@ Several sources were consulted and their guides followed, for example:
 - Google sheets [Google Sheets](https://docs.google.com/spreadsheets/u/0/ "Link to Google Sheets") 
 - Heroku [Heroku](https://id.heroku.com/login "Link to Heroku")
 - Google Cloud Platform [Google Cloud](https://console.cloud.google.com/home/dashboard?project=skincaresurvey "Link to Google Cloud Platform")
+- Google Drive [Google Drive](https://www.google.com/intl/es/drive/ "Link to Google Drive")
 
 
 ## Acknowledgements
 
-- I want to thank and recognize once again the amazing job of my mentor Antonio Rodriguez who has guided me in a really clear and commited way during this project. 
+- I want to thank and recognize once again the amazing job of my mentor Antonio Rodriguez who has guided me in a clear way during this project. 
 - I also want to mention and thank the student tutors service at Code Institute.
 
 
