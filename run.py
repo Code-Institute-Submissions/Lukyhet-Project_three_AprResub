@@ -57,7 +57,7 @@ def welcome():
         "If you want to launch a new skincare product " +
         "or to study the market this app is going to help you. " +
         "Skincare Survey is a market research tool aimed to " +
-        "collect and process data about skincare consumer preferences." +
+        "collect and process data about skincare consumer preferences. " +
         "Potential consumers in a target group can complete the survey. \n"
     )
     first_question = yes_no("If you are a skincare consumer" +
