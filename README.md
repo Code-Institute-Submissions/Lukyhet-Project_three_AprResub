@@ -1,14 +1,18 @@
 # Skincare Survey
 
+[View the live project here](https://lukyhet.github.io/Project_three/)
+
 
 ![Skincare Survey](assets/readme_files/SkincareSurvey.png)
 
-[View the live project here](https://lukyhet.github.io/Project_three/)
+
 
 
 ## Introduction
 
-Our app offers the possibility to apply a survey that gathers important information for companies interested in launching new skincare products. The app works by collecting possible customers preferences through a 10 questions survey. The survey asks about the potential customer skincare habits, age and skin type to compile it and give results that can show what is the most common skin type, the most favourite skincare product or the customers packaging preferences. This resulst have the potential to be used in market studies for companies intested in the data and it was made to facilitate their access to the skincare markets information directly taken from skincare consumers. The target audience is companies, entrepreneurs, students and researchers that are interested in having access to data about skincare consumers preferences.
+Our app offers the possibility to apply a survey that gathers important information for market researchers or companies interested in launching new skincare products. The app works by collecting possible customers preferences data through a 10 questions survey. The survey asks about the potential customer skincare habits, age and skin type to compile it and give results that can show what is the most common skin type, the most favourite skincare product or the customers packaging preferences. 
+
+The results have the potential to be used in market studies for companies intested in the data as it gives access to the skincare markets information directly taken from skincare consumers. The target audience is companies, entrepreneurs, students and researchers that are interested in the data about skincare consumers preferences.
 
 
 <details>
@@ -17,35 +21,46 @@ Skincare Survey app is a tool created for comercial research purposes. It is an 
 
 This app was made as the third milestone project to achieve the Diploma in Software Development at the Code Institute. 
 
-The purpose of this project is the automation of a survey that gathers information and gives results obtained from the 10 answers to the same number of questions about skincare preferences and habits. The main goal is to build a back end site using python that responds to the users actions, allowing the user to analize the data and use it for their comercial or research goals.
+The purpose of this bac-end project is the automation of a survey that gathers information and gives results obtained from the 10 answers to the same number of questions about skincare preferences and habits. The main goal was to build a back end site using python as a main language, and make it so it would respond to the users actions, allowing the user to access the data and use it for their comercial or research goals.
+
 
 ![Skincare Survey](assets/readme_files/SkincareSurvey2.png)
 
 
+
+
 ## UX
+
+
 ###  User Demographic
+
 The user for this website is: 
 
-- Companies, entrepreneurs, students and researchers that want collect skincare consumers market data to create and sell new skincare products to young and adult skincare consumers, or just for research purposes. The skincare consumers are people who has a skincare concern and who are interested in purchasing new skincare products to tackle their skin problems. 
+- Companies, entrepreneurs, students and researchers that want to collect skincare consumers market data to create and sell new skincare products to young and adult skincare consumers, or just for research purposes. The skincare consumers are people who has a skincare concern and who are interested in purchasing new skincare products to tackle their skin problems. 
 
 
 #### User Goals
 
 - To apply a survey/research tool aimed to gather information from potential consumers/users to help define what skincare product would be best to create and sell according to the preferences of the potential consumers. 
+
 - Gather information for research pouposes. 
+
 - Have an efficient and automated instrument (survey) to apply that also automates the process of updating the database.
+
 - Have clear results and data to work with.
+
 
 
 ## Features 
 
-This is a back-end application made using python. 
+This is a back-end application made using python deployed to Heroku. 
 
-The app applies a survey that poses 10 different questions about skincare habits and preferences, some of them offer answer options and others are simple yes or no questions. The client/user can use the app both for applying the survey meaning collecting the data, and producing the results. The app can both read the information from the base (google sheets skincare_survey document) and write on it, updating it form the app.
+The app greets the user and asks "do you want to take the survey?" if the answer is yes, it applies a survey that poses 10 different questions about skincare habits and preferences, some of them offer multiple answer options and others are simple yes or no questions. The client/user can use the app both for collecting the data, and producing the results. The app can both read the information from the base (google sheets skincare_survey document) and write on it, updating it from the app.
 
-The functions in the app contain validation code that accepts only the correct kind of input from the user.
+The functions in the app contain loops that validate the answers of the user and accept only the correct kind of input, and insist in the question until the user enters the valid response.
 
 As the survey app asks some questions that offer several options of answers, in the case of a tie the app can report it in the results, showing for example the two or three most prefered skincare products.
+
 
 
 #### Wireframes
