@@ -117,17 +117,102 @@ The PEP8 Validator was used to validate all the code of this repository and the 
 
 -PEP8 Validator ![PY](http://pep8online.com/checkresult)
 
-![Skincare Survey python coded validation](assets/readme_files/ValidationPy1.png)
+![Skincare Survey python code validation](assets/readme_files/ValidationPy1.png)
 
-![Skincare Survey python coded validation](assets/readme_files/ValidationPy5.png)
+![Skincare Survey python code validation](assets/readme_files/ValidationPy5.png)
 
-![Skincare Survey python coded validation](assets/readme_files/ValidationPy8.png)
+![Skincare Survey python code validation](assets/readme_files/ValidationPy8.png)
 
 
 
 ## Deployment
 
-This project was deployed in Github [View the live project here](https://lukyhet.github.io/Repository-Two/). And the app was deployed in Heroku - [View the heroku app here](https://skincare-survey.herokuapp.com/ "Link to Heroku app")
+This project was deployed in Github [View the live project here](https://lukyhet.github.io/Repository-Two/).
+
+### Deploying on GitHub Pages
+
+To deploy this site from the GitHub repository, the following steps were taken:
+
+
+-  Once in our github account, click in the [GitHub Repository](https://lukyhet.github.io/Project_three/ "Link to repository").
+-  In the repository, select Settings from the menu items.
+-  Scroll down the Settings page to the "Pages" section.
+-  Under "Source" click the drop-down menu labelled "None" and select "Main".
+-  Upon selection, the page will automatically refresh meaning that the website is now deployed.
+-  Scroll back down to the "Pages" section to retrieve the deployed link.
+
+     
+### Deploying on Heroku
+
+And the app was deployed in Heroku - [View the heroku app here](https://skincare-survey.herokuapp.com/ "Link to Heroku app")
+
+### Deployment to heroku
+
+**In the terminal** 
+
+-. add the list of requirements by writing in the terminal "pip3 freeze --local > requirements.txt"
+-. Git add and git commit the changes made
+
+**Log into heroku**
+
+. Log into [Heroku](https://dashboard.heroku.com/apps) or create a new account and log in
+
+. top right-hand corner click "New" and choose the option Create new app, if you are a new user, the "Create new app" button will appear in the middle of the screen
+
+. Write app name - it has to be unique, it cannot be the same as this app
+. Choose Region - I am in Europe
+. Click "Create App"
+
+**The page of your project opens.**
+
+8. Go to Resources Tab, Add-ons, search and add Heroku Postgres
+
+9. Choose "settings" from the menu on the top of the page
+
+10. Go to section "Config Vars" and click button "Reveal Config Vars". 
+
+11. Add the below variables to the list
+
+    * Database URL will be added automaticaly
+    * Secret_key - is the djnago secret key can be generated [here](https://miniwebtool.com/django-secret-key-generator/). 
+    * Cloudinary URL can be obtained from [cloudinary](https://cloudinary.com/) follow the steps on the website to register. 
+    * Google API key can be obtained [here](https://cloud.google.com/gcp?authuser=1) you will have to register with google and create new app to get the API key. Follow the instructions on the website.
+
+**Go back to your code**
+
+12. Procfile needs to be created in your app
+```
+web: gunicorn PROJ_NAME.wsgi
+```
+
+13. In settings in your app add Heroku to ALLOWED_HOSTS
+
+14. Add and commit the changes in your code and push to github
+
+**Final step - deployment**
+
+15. Next go to "Deploy" in the menu bar on the top 
+
+16. Go to section "deployment method", choose "GitHub"
+
+17. New section will appear "Connect to GitHub" - Search for the repository to connect to
+
+18. type the name of your repository and click "search"
+
+19. once Heroku finds your repository - click "connect"
+
+20. Scroll down to the section "Automatic Deploys"
+
+21. Click "Enable automatic deploys" or choose "Deploy branch" and manually deploy
+
+22. Click "Deploy branch"
+
+Once the program runs:
+you should see the message "the app was sussesfully deployed"
+
+23. Click the button "View"
+
+The live link can be found [here](https://mileage-tracker-app.herokuapp.com/).
 
     
 ## Credits 
