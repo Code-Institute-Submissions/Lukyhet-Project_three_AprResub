@@ -4,7 +4,7 @@
 [View the live project here](https://lukyhet.github.io/Project_three/)
 
 
-![Skincare Survey](assets/readme_files/SkincareSurvey.png)
+![Skincare Survey](assets/readme_files/SkincareSurvey3.png)
 
 
 
@@ -23,10 +23,7 @@ Skincare Survey app is a tool created for comercial research purposes. It is an 
 
 This app was made as the third milestone project to achieve the Diploma in Software Development at the Code Institute. 
 
-The purpose of this bac-end project is the automation of a survey that gathers information and gives results obtained from the 10 answers to the same number of questions about skincare preferences and habits. The main goal was to build a back end site using python as a main language, and make it so it would respond to the users actions, allowing the user to access the data and use it for their comercial or research goals.
-
-
-![Skincare Survey](assets/readme_files/SkincareSurvey2.png)
+The purpose of this back-end project is the automation of a survey that gathers information and gives results obtained from the 10 answers to the same number of questions about skincare preferences and habits. The main goal was to build a back end site using python as a main language, and make it so it would respond to the users actions, allowing the user to access the data and use it for their comercial or research goals.
 
 
 
@@ -53,6 +50,7 @@ The user for this website is:
 
 - Have clear results and data to work with.
 
+![Skincare Survey](assets/readme_files/surveyresults.png)
 
 
 ## Features 
@@ -70,7 +68,7 @@ As the survey app asks some questions that offer several options of answers, in 
 #### Wireframes
   
 
-- This project is a back-end app and it does not involve aesthetic design, the blueprints of the project or initial work was done by creating the questions and answer options that would collect the specific data to offer valuable results for clients interested in launching a successful new skincare product or for skincare consumers market researchers.
+This project is a back-end app and it does not involve aesthetic design, the blueprints of the project or initial work was done by creating the questions and answer options that would collect the specific data to offer valuable results for clients interested in launching a successful new skincare product or for skincare consumers market researchers.
 
 
 ## Debugging
@@ -94,10 +92,10 @@ Other bug was related to the deployment of the app in Heroku, there was an incom
 
 ### Features to Implement in the future
 
-- **Recommendations**
+**Recommendations**
 
 
-- We would like to include an option in the app that would add a third step after processing the data  and then come up with recommended options for potentially successful skincare products, but we are conscious that the process to come to those sugestions requires to collect more data and perhaps other market reading strategies.
+We would like to include an option in the app that would add a third step after processing the data  and then come up with recommended options for potentially successful skincare products, but we are conscious that the process to come to those sugestions requires to collect more data and perhaps other market reading strategies.
      
 
 ## Main Languages Used
@@ -177,48 +175,49 @@ The Skincare Survey app was deployed in Heroku - [View the heroku app here](http
 
 **In the terminal** 
 
--. Add the requirements by writing this command in the terminal: "pip3 freeze --local > requirements.txt"
--. Git add . and git commit your changes.
+-  Add the requirements by writing this command in the terminal: "pip3 freeze --local > requirements.txt".
+
+-  Git add . and git commit your changes.
 
 
 **Go to your heroku account**
 
--. Log into [Heroku](https://dashboard.heroku.com/apps). If you don't have an account create one.
+-  Log into [Heroku](https://dashboard.heroku.com/apps). If you don't have an account create one.
 
--. In the top right corner click "new" and select "Create new app".
+-  In the top right corner click "new" and select "Create new app".
 
--. Create a name for your app. It must be unique.
+-  Create a name for your app. It must be unique.
 
--. Choose Region - Ex: "Europe".
+-  Choose Region - Ex: "Europe".
 
--. Click "Create App".
+-  Click "Create App".
 
 
 **In your project page**
 
-. In the Resources Tab, Add-ons, look for "Heroku Postgres" and select it.
+-  In the Resources Tab, Add-ons, look for "Heroku Postgres" and select it.
 
-. Go to menu in the top of the page and choose "settings".
+-  Go to menu in the top of the page and choose "settings".
 
-. Go to "Config Vars" and click "Reveal Config Vars". 
+-  Go to "Config Vars" and click "Reveal Config Vars". 
 
-. Add the below variables to the list:
+-  Add the below variables to the list:
 
-. Database URL will be added automaticaly.
+-  Database URL will be added automaticaly.
 
-. In the field for Key we write CREDS, then paste the content of our creds.json file as value, ten click add. 
+-  In the field for Key we write CREDS, then paste the content of our creds.json file as value, ten click add. 
 
-. Go to the right side of the page and Add the buildpack "Python". Save the changes.
+-  Go to the right side of the page and Add the buildpack "Python". Save the changes.
 
-. Go to add buildpack again in the right side of the page and add node.js. Save the changes. Check that python is on top and node.js underneath, if not, drag and change the order.
+-  Go to add buildpack again in the right side of the page and add node.js. Save the changes. Check that python is on top and node.js underneath, if not, drag and change the order.
 
-. Go to the menu and click in the deployment method, select gitHub. Click "connect to GitHub".
+-  Go to the menu and click in the deployment method, select gitHub. Click "connect to GitHub".
 
-. Enter your GitHub repository name and click search and then click "connect".
+-  Enter your GitHub repository name and click search and then click "connect".
 
-.Choose to manually or automatically deploy, then you should see "The app was successfully deployed" message.
+-  Choose to manually or automatically deploy, then you should see "The app was successfully deployed" message.
 
-. Click in "view" to take a look at your app. If you need to restart click "Run Program".
+-  Click in "view" to take a look at your app. If you need to restart click "Run Program".
 
 
     
@@ -250,6 +249,7 @@ Several sources were consulted and their guides followed, for example:
 
 
 - I want to thank and recognize once again the amazing job of my mentor Antonio Rodriguez who has guided me in a clear way during this project. 
+
 - I also want to mention and thank the student tutors service at Code Institute.
 
 
