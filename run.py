@@ -26,7 +26,6 @@ def validate_input(input_value, valid_value_list):
 
 
 
-
 def yes_no(question):
     """
     function to get a yes or no answer from the user.
